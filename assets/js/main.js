@@ -37,3 +37,15 @@ class AudioController {
         this.gameOverSound.play();
     }
 }
+
+
+
+
+
+
+// statement that checks if the page DOM content has loaded before loading the javascript
+if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', ready());
+}else {
+    ready();
+}
