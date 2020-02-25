@@ -181,6 +181,32 @@ input{
   z-index:1000;
   color:#f5e110;
 }
+
+.overlays.visible{
+  display:flex;
+  flex-direction:column;
+  animation:overlays-expand 500ms forwards;
+}
+
+@keyframes overlays-expand{
+  from {
+      background-color:rgba(0,0,0,0);
+      font-size:0em;
+  }
+  to {
+      background-color:rgba(0,0,0,.8);
+      font-size:5em;
+  }
+}
+
+.overlays-small{
+  font-size:.3em;
+}
+
+#winner{
+  width:640px;
+  height:640px;
+}
   
   
   /* -- Media Query -- */
