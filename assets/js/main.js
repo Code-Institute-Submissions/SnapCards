@@ -1,6 +1,6 @@
 // Function that takes the users inputted name value and displays it in a span within the game and also transitions the game from the landing page to the game page
 function getPlayerName(){
-    document.getElementById("playerName").innerHTML = document.getElementById('playerName').value + "";
+    document.getElementById("gamerId").innerHTML = document.getElementById('playerName').value + "";
 
     document.getElementById('landing-page').style.display = "none"; document.getElementById('game-page').style.display="block";
 }
