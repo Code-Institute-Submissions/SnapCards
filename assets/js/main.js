@@ -47,6 +47,26 @@ class AudioController {
 
 
 
+// Function that declares overlay screens and card deck and adds visibiliy toggle and sets up startGame funcito and flipCard function
+function ready() {
+    let overlays = Array.from(document.getElementsByClassName('overlays'));
+    let cards = Array.from(document.getElementsByClassName('card'));
+
+// for each overlay, add an event listener and remove its visible class when when its clicked
+    overlays.forEach(overlay => {
+    overlay.addEventListener('click', () => {
+    overlay.classList.remove('visible');
+    //game.startGame(); 
+        });
+
+    });//add event listener that listens for each click of a card and flips it
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+            //game.flipCard(card);
+            });
+    });
+}
+
 
 
 // statement that checks if the page DOM content has loaded before loading the javascript
