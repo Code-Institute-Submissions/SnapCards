@@ -3,7 +3,7 @@ function getPlayerName(){
     document.getElementById("playerName").innerHTML = document.getElementById('gamerId').value + "";
     document.getElementById('landing-page').style.display = "none"; document.getElementById('game-page').style.display="block";
 }
-
+// Create a class to manage the instances of audio tracks. 
 class AudioController {
     constructor() {
         this.bgMusic = new Audio('assets/audio/bgMusic.mp3');
@@ -11,27 +11,33 @@ class AudioController {
         this.matchSound = new Audio('assets/audio/success.wav');
         this.winningSound = new Audio('assets/audio/winning.mp3');
         this.gameOverSound = new Audio('assets/audio/gameover.mp3');
-        this.bgMusic.volume = 0.3;
-        this.winningSound.volume = 0.8;
-        this.bgMusic.loop = true;
+        this.bgMusic.volume = 0.3; // audio volume decrease as it is quite loud from source
+        this.winningSound.volume = 0.8; // audio volume decrease so as not to startle people
+        this.bgMusic.loop = true;// loop the background game music to play over continously
     }
+    // Start music function
     startMusic() {
         this.bgMusic.play();
     }
+    //stop function for music, pause the current track and reset its time to 0
     stopMusic(){
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
     }
+    // card flip sound
     flip(){
         this.flipSound.play();
     }
+    // Card Match Sound
     match() {
         this.matchSound.play();
     }
-    victory() {
+    // Winning Sound upon completion of game, by playing stop music function and playing winning sound function
+    winning() {
         this.stopMusic();
         this.winningSound.play();
     }
+    // Game Over track, runs stopmusic funciton and plays gameover track
     gameOver(){
         this.stopMusic();
         this.gameOverSound.play();
