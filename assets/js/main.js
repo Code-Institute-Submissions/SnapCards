@@ -57,16 +57,37 @@ class SnapCardGame {
         this.audioController = new AudioController();
         
     }
-    // StartGame Function
+    // StartGame Function -- On starting setup these variables to these values
     startGame(){
+        // card selector
+        this.cardCheck = null;
+        // setting the clicks value as 0
+        this.totalClicks = 0; 
+        // pointing the timeremaining value at the totaltime varable
+        this.timeRemaining = this.totalTime;
+        // setting an empty array for matched cards to go into
+        this.matchedCards = [];
+        // setting the state of the actions, card is selected to true
+        this.selected = true;
+        // run card hide function
+        this.hideCards();
+        // pointing time at timeremaining varable
+        this.time.innerText = this.timeRemaining;
+        // pointing counter at totalclicks varable
+        this.counter.innerText = this.totalClicks;
 
     }
-    // set cards to be hidden
-    hidecards(){
+    // set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when restting or setting up for the first time
+    hideCards(){
+        this.cardsArray.forEach(card => {
+            card.classList.remove('visible');
+            card.classLsit.remove('matched');
+        })
 
     }
     // card flippping function
     flipCard(){
+        
 
     }
     // Do the cards match
@@ -89,8 +110,13 @@ class SnapCardGame {
     Winning(){
 
     }
-    // Card Shuffle function
+    // Card Shuffle function --- fisher Yeates Function for shuffling
     shuffleCards(){
+        for(let i= this.cardsArray.length - 1; i > 0; i--){
+        let randomIndex = Math.floor(Math.random() * (16));
+        this.cardsArray[randomIndex].style.order = i;
+        this.cardsArray[i].style.order = randomIndex;
+        }
 
     }
     // can the card flip conditions
