@@ -1,6 +1,7 @@
 // Function that takes the users inputted name value and displays it in a span within the game and also transitions the game from the landing page to the game page
 function getPlayerName(){
-    document.getElementById("playerName").innerHTML = document.getElementById('gamerId').value + "";
+    document.getElementById("playerName").innerHTML = document.getElementById('playerName').value + "";
+
     document.getElementById('landing-page').style.display = "none"; document.getElementById('game-page').style.display="block";
 }
 // Create a class to manage the instances of audio tracks. 
@@ -25,7 +26,7 @@ class AudioController {
         this.bgMusic.currentTime = 0;
     }
     // card flip sound
-    flipSound(){
+    flip(){
         this.flipSound.play();
     }
     // Card Match Sound
@@ -52,8 +53,8 @@ class SnapCardGame {
         this.cardsArray = cards;
         this.totalTime = totalTime;
         this.timeRemaining = totalTime;
-        this.timer = document.getElementById('time-remaining');
-        this.ticker = document.getElementById('flips');
+        this.time = document.getElementById('time-remaining');
+        this.counter = document.getElementById('flips');
         this.audioController = new AudioController();
         
     }
@@ -87,16 +88,16 @@ class SnapCardGame {
     hideCards(){
         this.cardsArray.forEach(card => {
             card.classList.remove('visible');
-            card.classLsit.remove('matched');
-        })
+            card.classList.remove('matched');
+        });
 
     }
 
     // card flippping function
-    flipCard(){
+    flipCard(card){
         if(this.canCardFlip(card)){
-            this.audioController.flipSound();
-            this.totalClicks ++;
+            this.audioController.flip();
+            this.totalClicks++;
             this.time.innerText = this.totalClicks;
             card.classList.add('visible');
 
@@ -154,15 +155,16 @@ class SnapCardGame {
     gameOver(){
         clearInterval(this.countDown);
         this.audioController.gameOver();
-        document.getElementById('game-over-text').classList.add('visible');
-
+        document.getElementById('out-of-time').classList.add('visible');
+        
     }
     // winning the game conditions
     winning(){
         clearInterval(this.countDown);
         this.audioController.winning();
         document.getElementById('winner').classList.add('visible');
-
+        document.getElementById('totalMoves').innerHTML = this.totalClicks;
+        document.getElementById('timeTaken').innerHTML = this.totalTime - this.timeRemaining;
     }
     // Card Shuffle function --- fisher Yeates Function for shuffling
     shuffleCards(){
@@ -174,8 +176,8 @@ class SnapCardGame {
 
     }
     // can the card flip conditions
-    canCardFlip(){
-
+    canCardFlip(card){
+        return !this.selected && !this.matchedCards.includes(card) && card !== this.cardCheck;
     }
 
 }
@@ -187,17 +189,17 @@ class SnapCardGame {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
     let cards = Array.from(document.getElementsByClassName('card'));
-
+    let game = new SnapCardGame(100, cards);
     overlays.forEach(overlay => {
     overlay.addEventListener('click', () => {
     overlay.classList.remove('visible');
-    //game.startGame(); 
+    game.startGame(); 
         });
 
     });
         cards.forEach(card => {
             card.addEventListener('click', () => {
-            //game.flipCard(card);
+            game.flipCard(card);
             });
     });
 }
