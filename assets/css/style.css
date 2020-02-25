@@ -1,0 +1,85 @@
+/* -- Page Setup --*/
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    min-height:100vh;
+}
+
+body{
+    margin:0;
+    padding:0;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 1);
+    
+    
+}
+
+/* -- Landing Page --*/
+
+
+.container.landing-page{
+    margin:0;
+    padding:0;
+    height:100vh;
+    margin-left:auto;
+    margin-right:auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:url('../images/cards.jpg');
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.menu{
+    margin:0;
+    padding:50px;
+    position: relative;
+    width:auto;
+    align-items: center;
+    text-align: center;
+    background-color:rgba(0,0,0,0.6);
+    border: 4px solid #000;
+    border-radius: 10px;
+}
+.game-snapshot{
+    width:350px;
+    height:280px;
+    margin:auto;
+    background-color:red;
+}
+input{
+    text-align: center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    }
+
+.player-info{
+    margin-top:10px;
+}
+.h3-title{
+    font-size:3em;
+    font-style: italic;
+    font-weight:900;
+    text-transform: uppercase;
+    color:rgb(222, 7, 7);
+}
+
+.question{
+    color:rgb(219, 236, 28);
+    font-size:1.5em;
+    font-style: italic;
+    font-weight:900;
+}
+
+
+
+
+
+
