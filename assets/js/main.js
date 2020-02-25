@@ -46,20 +46,75 @@ class AudioController {
 
 
 
+//Declaring a class for the game and all its variables
+class SnapCardGame {
+    constructor(totalTime, cards){
+        this.cardsArray = cards;
+        this.totalTime = totalTime;
+        this.timeRemaining = totalTime;
+        this.timer = document.getElementById('time-remaining');
+        this.ticker = document.getElementById('flips');
+        this.audioController = new AudioController();
+        
+    }
+    // StartGame Function
+    startGame(){
 
-// Function that declares overlay screens and card deck and adds visibiliy toggle and sets up startGame funcito and flipCard function
+    }
+    // set cards to be hidden
+    hidecards(){
+
+    }
+    // card flippping function
+    flipCard(){
+
+    }
+    // Do the cards match
+    cardMatchCheck(){
+
+    }
+    // cards match
+    cardMatch(){
+
+    }
+    // cards do not match
+    cardMisMatch(){
+
+    }
+    // gameover conditions
+    gameOver(){
+
+    }
+    // winning the game conditions
+    Winning(){
+
+    }
+    // Card Shuffle function
+    shuffleCards(){
+
+    }
+    // can the card flip conditions
+    canCardFlip(){
+
+    }
+
+}
+
+
+
+
+// Function that declares overlay screens and card deck and adds visibiliy toggle and sets up startGame funciton and flipCard function
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
     let cards = Array.from(document.getElementsByClassName('card'));
 
-// for each overlay, add an event listener and remove its visible class when when its clicked
     overlays.forEach(overlay => {
     overlay.addEventListener('click', () => {
     overlay.classList.remove('visible');
     //game.startGame(); 
         });
 
-    });//add event listener that listens for each click of a card and flips it
+    });
         cards.forEach(card => {
             card.addEventListener('click', () => {
             //game.flipCard(card);
