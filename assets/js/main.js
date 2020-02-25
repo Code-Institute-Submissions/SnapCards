@@ -25,11 +25,11 @@ class AudioController {
         this.bgMusic.currentTime = 0;
     }
     // card flip sound
-    flip(){
+    flipSound(){
         this.flipSound.play();
     }
     // Card Match Sound
-    match() {
+    matched() {
         this.matchSound.play();
     }
     // Winning Sound upon completion of game, by playing stop music function and playing winning sound function
@@ -85,18 +85,45 @@ class SnapCardGame {
         })
 
     }
+
     // card flippping function
     flipCard(){
-        
+        if(this.canCardFlip(card)){
+            this.audioController.flipSound();
+            this.totalClicks ++;
+            this.time.innerText = this.totalClicks;
+            card.classList.add('visible');
+
+        if(this.cardCheck)
+            this.cardMatchCheck(card);
+        else
+            this.cardCheck = card;
+        }
 
     }
-    // Do the cards match
-    cardMatchCheck(){
 
+    // Do the cards match
+    cardMatchCheck(card){
+        if(this.cardtype(card) === this.cardtype(this.cardCheck))
+            this.cardMatch(card, this.cardCheck);
+        else    
+            this.cardMisMatch(card, this.cardCheck);
+            this.cardCheck = null;
+    }
+
+    cardtype(card){
+        return card.getElementsByClassName('card-actual')[0].src;
     }
     // cards match
-    cardMatch(){
+    cardMatch(card1, card2){
+        this.matchedCards.push(card1);
+        this.matchedCards.push(card2);
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        this.audioController.matched();
 
+        if(this.matchedCards.length === this.cardsArray.length)
+            this.winning();
     }
     // cards do not match
     cardMisMatch(){
