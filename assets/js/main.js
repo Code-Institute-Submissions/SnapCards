@@ -75,7 +75,13 @@ class SnapCardGame {
         this.time.innerText = this.timeRemaining;
         // pointing counter at totalclicks varable
         this.counter.innerText = this.totalClicks;
-
+        // settimeout function - function to set time to start and triggger shuffle, countdown and selected state
+        setTimeout(() => {
+            this.audioController.startMusic();
+            this.shuffleCards();
+            this.selected = false;
+            this.countDown = this.startCountDown();
+        },500);
     }
     // set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when restting or setting up for the first time
     hideCards(){
@@ -126,15 +132,36 @@ class SnapCardGame {
             this.winning();
     }
     // cards do not match
-    cardMisMatch(){
+    cardMisMatch(card1, card2){
+        this.selected = true;
+        setTimeout(() => {
+            card1.classList.remove('visible');
+            card2.classList.remove('visible');
+            this.selected = false;
+        },700);
+    }
 
+    // start counting down function - timer
+    startCountDown(){
+        return setInterval(() => {
+            this.timeRemaining--;
+            this.time.innerText = this.timeRemaining;
+        if(this.timeRemaining === 0)
+            this.gameOver();
+        },700);
     }
     // gameover conditions
     gameOver(){
+        clearInterval(this.countDown);
+        this.audioController.gameOver();
+        document.getElementById('game-over-text').classList.add('visible');
 
     }
     // winning the game conditions
-    Winning(){
+    winning(){
+        clearInterval(this.countDown);
+        this.audioController.winning();
+        document.getElementById('winner').classList.add('visible');
 
     }
     // Card Shuffle function --- fisher Yeates Function for shuffling
