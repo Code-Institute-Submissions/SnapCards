@@ -79,6 +79,8 @@ input{
 }
 
 
+
+
 /* -- Game Page --*/
 
 
@@ -110,7 +112,11 @@ input{
     justify-content: space-evenly;
   }
   
- .game-container{
+  .easy-game.level-1{
+    display:block;
+  }
+  
+  .game-container{
     display:grid;
     grid-template-columns: repeat(4, auto);
     grid-gap:15px;
@@ -140,7 +146,37 @@ input{
     backface-visibility: hidden;
     transition: transform 500ms ease-in-out;
   }
-
-
-
-
+  
+  .card-front{
+    transform: rotateY(180deg);
+  }
+  
+  .card.matched .card.actual{
+    transform:scale(.97);
+    transition:transform .2s;
+  }
+  
+  .card.visible .card-back{
+    transform:rotateY(-180deg);
+  }
+  
+  .card.visible .card-front{
+    transform:rotateY(0);
+  }
+  
+  .card-front:hover .card-actual{
+    transform:scale(1);
+  }
+  
+  
+  
+  /* -- Media Query -- */
+  @media (max-width: 600px) {
+    .game-container {
+        grid-template-columns:repeat(2,auto);
+    }
+    .game-info-container{
+        flex-direction:column;
+        align-items:center;
+    }
+  }
