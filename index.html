@@ -53,6 +53,30 @@
 <!-- Start Of Game Page -->
 <div class="game-page">
     <div class="game-page-content">
+    
+    <!-- Start Game Overlay -->
+        <div class="overlays visible">
+            Click To Start
+        </div>
+        
+      <!-- Winning Overlay --> 
+        <div class="overlays" id="winner">
+           <h2> Congrats!! You have Won!!</h2> 
+            <div class="overlays-sml">You found all the pairs</div>
+            <div class="overlays-small">
+                <p>It only took you <span id="totalMoves"> </span> clicks</p>
+                <p>Time taken: <span id="timeTaken"> </span></p>   
+            </div>
+            <button id="retry" onclick="startGame()"> Go Again </button>
+        </div>
+
+        <!-- Out of Time Overlay  -->
+        <div class="overlays" id="out-of-time">
+            You are Out of Time!!<br><br>
+            Game over!!
+            <span class="overlays-sml">Click to Restart</span>
+        </div>
+
         <div class="container game-details">
             <h3 class="game-title">Player : <span id="playerName"></span></h3>
                 <div class="game-container">
