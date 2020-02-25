@@ -41,11 +41,12 @@
             <h5 class="question">Type your name below and press Submit</h5>
             <br>
             <form action="name" method="GET">
-                <input type="text" name="playerName" id = "playerName" class="inputBox">
+                <input type="text" name="playerName" id ="playerName" class="inputBox">
                
-            </form>
+            
             <br><br>
-            <button class="btn btn-danger btn-round-lg" onclick="getPlayerName()">Submit</button>
+            <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit"></input>
+        </form>
         </div>
     </div>
   </div>
@@ -78,7 +79,7 @@
         </div>
 
         <div class="container game-details">
-            <h3 class="game-title">Player : <span id="gamerId"></span></h3>
+            <h3 class="game-title">Player : <span id="playerName"> </span></h3>
                 <div class="game-container">
                     <div class="game-info-container">            
                         <div class="game-info">
