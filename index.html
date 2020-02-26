@@ -32,7 +32,7 @@
             <h5 class="question">Match all the pairs to win the game!!</h5>
         </div>
         <div class="game-snapshot">
-            <img>
+            <img class="preview" src="assets/images/gamepreview.JPG">
         </div>
         <div class="player-info">
             <h5 class="question">Ready to Play?</h5>
@@ -56,8 +56,8 @@
     <div class="game-page-content">
     
     <!-- Start Game Overlay -->
-        <div class="overlays visible">
-            Click To Start
+        <div class="overlays visible" id="intro">
+            <div class="intro-text">Click to Begin!</div>
         </div>
         
       <!-- Winning Overlay --> 
@@ -79,6 +79,7 @@
         </div>
 
         <div class="container game-details">
+           
             <h3 class="game-title">Player : <span id="gamerId"> </span></h3>
                 <div class="game-container">
                     <div class="game-info-container">            
@@ -87,14 +88,6 @@
                          </div>
                         <div class="game-info">
                             Flips: <span id ="flips">0</span>
-                        </div>
-                        <div class="game-info">
-                            Rating:
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -240,14 +233,14 @@
         
         <div class="card">
             <div class="card-back card-face">
-                <img class="card-img"" src="assets/images/card-back.png">
+                <img class="card-img" src="assets/images/card-back.png">
             </div>
             <div class="card-front card-face">
                 <img class="card-actual" src="assets/images/10.png">
             </div>
         </div>
         </div>
-
+    </div>
 <!-- End of Game Page -->      
         </div>
     </div>

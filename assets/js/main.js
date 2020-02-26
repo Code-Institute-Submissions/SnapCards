@@ -76,7 +76,7 @@ class SnapCardGame {
         this.time.innerText = this.timeRemaining;
         // pointing counter at totalclicks varable
         this.counter.innerText = this.totalClicks;
-        // settimeout function - function to set time to start and triggger shuffle, countdown and selected state
+        // settimeout  function - function to set time to start and triggger shuffle, countdown and selected state
         setTimeout(() => {
             this.audioController.startMusic();
             this.shuffleCards();
@@ -93,12 +93,14 @@ class SnapCardGame {
 
     }
 
+
+
     // card flippping function
     flipCard(card){
         if(this.canCardFlip(card)){
             this.audioController.flip();
             this.totalClicks++;
-            this.time.innerText = this.totalClicks;
+            this.counter.innerText = this.totalClicks;
             card.classList.add('visible');
 
         if(this.cardCheck)

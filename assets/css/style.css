@@ -48,10 +48,17 @@ body{
     border-radius: 10px;
 }
 .game-snapshot{
-    width:350px;
-    height:280px;
+    margin:0;
+    height:400px;
     margin:auto;
-    background-color:red;
+   
+}
+
+img.preview{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+   
 }
 input{
     text-align: center;
@@ -81,6 +88,9 @@ input{
 
 
 
+
+
+
 /* -- Game Page --*/
 
 
@@ -103,7 +113,7 @@ input{
   .game-details{
     background-color:#fff;
     width:max-content;
-    opacity:0.4;
+    
   }
 
   #playerName{
@@ -118,6 +128,10 @@ input{
     grid-column:1/-1;
     justify-content: space-evenly;
   }
+
+.fa-star {
+	color: #FFD700;
+}
   
   
   .game-container{
@@ -192,6 +206,20 @@ input{
   animation:overlays-expand 500ms forwards;
 }
 
+.intro-text{
+    text-transform: uppercase;
+    border:5px solid #f5e110;
+    cursor:pointer;
+    font-style: italic;
+    font-weight:700;
+    padding:15px;
+}
+
+.intro-text:hover{
+    border:5px solid rgb(219, 14, 14);
+    color:rgb(219, 14, 14);
+}
+
 @keyframes overlays-expand{
   from {
       background-color:rgba(0,0,0,0);
@@ -211,6 +239,9 @@ input{
   width:640px;
   height:640px;
 }
+
+
+
   
   
   /* -- Media Query -- */
