@@ -120,6 +120,9 @@ Initially I had developed the game in another repository, however I decided to r
 
 This site can be accessed directly through the following link: https://pysched.github.io/SnapCards/
 ## Credits
+Original card images in svg format sourced from the below link
+- Card styles sourced from : https://www.vecteezy.com/free-vector/playing-cardsPlaying Cards Vectors by Vecteezy
+- These files are free to use with credits and where heavyly edit by me.
 
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
