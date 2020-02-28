@@ -63,7 +63,13 @@ If the player is unssuccessul in completing the game in time then they are prese
 The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
 
 #### Wireframes
-![Wireframes Images](Wireframes/start%20page.jpg)
+The following wireframes are my initial design of the game, they served as a framework to work towards, the final product is very similar to this initial design.
+
+![Wireframes Images - Start Page](Wireframes/start%20page.jpg)
+![Wireframes Images - Start Page](Wireframes/2nd%20page.jpg)
+![Wireframes Images - Game Page](Wireframes/game%20page.jpg)
+![Wireframes Images - Results PAge](Wireframes/results%20page.jpg)
+![Wireframes Images - Game OVer PAge](Wireframes/error%20page.jpg)
 
 ## Features
 
