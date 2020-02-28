@@ -2,8 +2,10 @@
 function getPlayerName(){
     document.getElementById("gamerId").innerHTML = document.getElementById('playerName').value + "";
 
-    document.getElementById('landing-page').style.display = "none"; document.getElementById('game-page').style.display="block";
+    document.getElementById('landing-page').style.display = "none"; document.getElementById('game-page').style.display="flex";
 }
+
+
 // Create a class to manage the instances of audio tracks. 
 class AudioController {
     constructor() {
@@ -76,7 +78,7 @@ class SnapCardGame {
         this.time.innerText = this.timeRemaining;
         // pointing counter at totalclicks varable
         this.counter.innerText = this.totalClicks;
-        // settimeout  function - function to set time to start and triggger shuffle, countdown and selected state
+        // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
         setTimeout(() => {
             this.audioController.startMusic();
             this.shuffleCards();
@@ -151,7 +153,7 @@ class SnapCardGame {
             this.time.innerText = this.timeRemaining;
         if(this.timeRemaining === 0)
             this.gameOver();
-        },700);
+        },1000);
     }
     // gameover conditions
     gameOver(){
@@ -171,7 +173,7 @@ class SnapCardGame {
     // Card Shuffle function --- fisher Yeates Function for shuffling
     shuffleCards(){
         for(let i= this.cardsArray.length - 1; i > 0; i--){
-        let randomIndex = Math.floor(Math.random() * (16));
+        let randomIndex = Math.floor(Math.random() * (7));
         this.cardsArray[randomIndex].style.order = i;
         this.cardsArray[i].style.order = randomIndex;
         }
@@ -191,7 +193,7 @@ class SnapCardGame {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new SnapCardGame(100, cards);
+    let game = new SnapCardGame(60, cards);
     overlays.forEach(overlay => {
     overlay.addEventListener('click', () => {
     overlay.classList.remove('visible');
