@@ -102,7 +102,7 @@ This website is deployed on github pages. Deployment to my Github pages is done 
 All versions of the development process is held on the master branch.
 Initially I had developed the game in another repository, however I decided to restart the process and import images, audio, and base initial styles in my initial commit to this repository.  
 
-This site can be accessed directly through the following link: 
+This site can be accessed directly through the following link: https://pysched.github.io/SnapCards/
 ## Credits
 
 ### Content
