@@ -20,7 +20,17 @@ The main objectives of the game are:
 
 ## UX
 
-The game is developed as a single interactive webpage. With a sign in page that requires a player to assign a name, this section of the page will be hidden upon name submission. It has a required input box, that ensures players have a name for the game they are playing. The home screen is styled with text information and an image of a completed game to give users an idea of what it is they have to do.
+The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 seperate layers that are revealed as the situation and flow occurs. Those sections/ layers are:
+#### Landing Page
+The first section The player is brought to is the landing page. Here The player is introducted to the game. There is an animated flashing game name to highlight the game title. 
+
+Beneath this there is text explaining what the objective of the game is. That being to match pairs of cards within a time limit.
+There is a supporting screenshot of a completed game of matched pairs of cards beneath this to further inform the players.
+
+Below this image is an instruction for the player/user to fill in their name beneath. This has
+
+
+With a sign in page that requires a player to assign a name, this section of the page will be hidden upon name submission. It has a required input box, that ensures players have a name for the game they are playing. The home screen is styled with text information and an image of a completed game to give users an idea of what it is they have to do.
 
 The site is responsive in design, with the playable area designing to be displayed on mobile, tablet and desktop.
 
@@ -64,6 +74,7 @@ If the player successfully matches all pairs within the time limit and will a pr
 
  
 ### Existing Features
+
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...
 
@@ -91,6 +102,7 @@ Bootstrap is used in this project for the following areas:
 - Card items
 
 ### FontAwesome v4.7.0
+
 Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is refereneced as intented to be available should further developments to the game occur in the future.
 
 The Fontawesome link is from my own personal account with FontAwesome.
@@ -104,14 +116,8 @@ GitHub Repository: https://github.com/Pysched/SnapCards
 Demo Link: https://pysched.github.io/SnapCards/
 
 ### IDE
+
 This project was developed in part on the GitPod IDE, however for local testing and development and due to technical issues with gitpod, it was also developed with Visual Studio Code Editor.
-
-
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-
 
 ## Testing
 
@@ -177,18 +183,18 @@ Acknowledgemets to the following in the construction, guidence and direction of 
 
 ### Tutorials and Learnings
 
-- How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
-This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me form my idea and provide understanding of how to setup my html and css for later javascript.
+How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
+This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me to form my ideas and provide context and understanding of how to setup my html and css for later javascript.
 
-- How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
+How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
 This tutorial is the second part of the explainer video, here the javascript method is explained, I used this resource to learn about how to implement the game logic in terms of setting up javascript classes, constructors, creation of audio classes/ constuctors and compliing these setups to run together. I completed this several times to further embed this learning and get a better understanding of how and why to setup my javascript in these ways.
 
-- Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
+Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
 This tutorial was another breakdown of creating a javascript memory game, it was approached differently that the previous videos and served to help learn about the different ways that javascript can be implemented to develop similar outcomes. This served to help me frame my game idea and aided in my development  and learning of javascript implementation.
 
-- Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
-This tutorial again took another approach of how to implement javascript to create a memory game. It taught me alot in regards to how to setup and implement javascript for a memory game aswell. being able to follow the flow of creating a javascript system greatly aided my learning and understanding.
+Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
+This tutorial took a different approach in its implement of javascript to create a memory game. I gained a large amount of insight with regards to how to setup and implement javascript for a memory game. Being able to follow the flow of creating a javascript system greatly aided my learning and understanding.
 
-- Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
-I worked through a javascript course at codeacademy which aided in my understanding of constructor classes, how to construct them and deployment.
+Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
+I worked through a javascript course at codeacademy which aided in my understanding of constructor classes, their construction, use and implmentation.
 
