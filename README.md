@@ -1,34 +1,25 @@
 # Interactive Front End Development Project - Snap Card Game
 
-This project consists of designing an interactive game, SnapCards. Snap is a card game where by the user is presented with a number of cards, 16 , which are faced down at game start. The aim of the game is to match pairs of cards, within a time limit. As on each start of the game the cards are shuffled randomly, each new play thorugh is a new challenge
+This project consists of designing, coding and implementing an interactive game, named Snap Cards. Snap Cards is a memory game where by the user is presented with a number of cards, 16 , which are faced down at the game start. The aim of the game is to match pairs of these cards, within a time limit. At the  start of each game the cards are shuffled randomly, so that each new play thorugh is a new challenge.
 
-How to play: The player selects a card, which animates flipping over to reveal what it is, the user then selects another card, which performs the same flipping action. If the cards match they stay facing up to the user and are added to a counter that indicates how many pairs the user has found. If they do not match, then they both flip back down, and the user carries on until they match a pair.
+How to play: The player selects a card, which animates through flipping around to reveal what it is, the user then selects another card, which performs the same flipping action. If the cards match they stay facing up to the user and are added to a counter that indicates how many attempts the user has made. If they do not match, then they both flip back over, and the user carries on until they match a pair.
 
-To add to the difficulty the user is faced with a countdown timer. All matches must be completed within a given time (to be determined through play through and assessment of difficulty). The user is also rated against how many attempts that they have made, A live scale beside the attempts counter will indicate from green to red how effective the player is.
+To add to the difficulty the user is faced with a countdown timer. All matches must be completed within a given time, of 60 seconds. 
 
 The timer is constantly displayed on screen as is the flip attempts counts and a rating of attempts very a pre-determined rating. Example: if there are 16 cards, that’s 8 pairs, if it takes the user 12 attempts, then that is a rating of green, if it takes 16 attempts then it is a rating of amber, 18+ attempts it is a red rating and the player needs to replay the game.
 
-The player will also have the option from the start of selecting the difficulty level, this will be differentiated by the number of cards. Example: Start with 16, 20 or 24 cards, with different time amounts for the game to be completed in.
+At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of How many attempts it tool the user to find all the matches and how many seconds it took them.
 
-At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. Based on how the player scored, different images, graphics and commentary will be provided based on time, score, efficiency and how many pairs are matched.
-
-As each level of the game is completed the user is brought to the next level of difficulty. Example: if the player wins the 16 cards level of difficulty they are progressed to the 20 card round etc..
-
-After 3 rounds or by winning the hardest level, 24 cards, the player is then presented with the next level of the game, level 2 has shapes inside the cards instead of numbers, Successfully winning this level progresses the player to the 3rd level, patterns. Each time all 3 levels of difficulty are finished the player is brought to the next level;
-
-Level 1: Playing cards Level 2: Shapes Level 3: Patterns
-Successful completion of each level presents the player with a summary screen that shows the results of the round; Time completed in, attempts taken, effectiveness ratings.
 
 ## UX
 
-The game will be developed as a interactive webpage. With a sign in page that requires a player to assign a name. This will have a required input box, that ensures players have a name for various stages of the game. The home screen will be styled with an illustrated style of graphics, made in photoshop and illustrator by myself.
+The game will be developed as a interactive webpage. With a sign in page that requires a player to assign a name. This will have a required input box, that ensures players have a name for the game they are playing. The home screen will be styled with text information and an image of a completed game to give users an idea of what it is they have to do.
 
 The site will be responsive in design, with the playable area being designing to be displayed on mobile, tablet and desktop.
 
-The user base is targeted at 4 - 99, making the game accessible to all potential users, who enjoy challenging their memory and pattern sorting abilities. The timer attempts and effectiveness ratings also put a level of 'stakes' to the game. The results of the players performance are also designed to be funny and motivational, a selection of humorous results screens will encourage, challenge and praise performance of the player to entice them to keep going or to try harder.
+The user base is targeted at 4 - 99, making the game accessible to all potential users, who enjoy challenging their memory and pattern sorting abilities. The timer and attempts also put a level of 'stakes' to the game. The results of the players performance are also aimed at creating a sense of trying to beat a previous score or previous time completed in.
 
-The objective of the game is to challenge the player to find, remember and match pairs of numbers and suits of playing cards in the first level, similar shapes with the same colour in the second round and similar pattern pairs in the 3rd level.
-
+The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
 
 Wireframes are in a folder in the respository labelled wireframes
 
@@ -45,18 +36,15 @@ After this point the player, assuming they replay from within the same session, 
 
 Once options have been selected the player is brought to the game screen. Here there is a start button to start the game. This is here so that the player has time is see the modal tool tips that will be made to explain what the player is to do. Once they either close the tool tips of complete them they are free to press start and begin the game.
 
-There will be an instruction button that can be pressed before a game starts to see the instructions of the game, however once the game starts the instructions button is disabled.
-
-The game starts with the timer counting down. from here the user can select cards by clicking on them. Each click of a card animated the element to display what is behind it. This flip of the card only last for 3 - 5 seconds, or upon clicking of a second card, they both stay flipped for 3 -5 seconds, unless they match they will both revert back to their default positions.
+The game starts with when the user clicks a modal that asks them to click to start whent hey are ready, this triggers the timer to start counting down. From here the user can select cards by clicking on them. Each click of a card animates the element to display what is behind it. This flip of the card only last for 500ms, or upon clicking of a second card, they both stay flipped for 1 second, unless they match they will both revert back to their default positions.
 Matched cards will stay revealed for the duration of the game.
 
-Each click of a pair of cards will be counted as an attempt. This will be updated in the attempts counter on screen for the user to see.
-Based on the number of attempts made a scale ranging from green to red will update to indicate how effective the player has been.
+Each click of a card will be counted as an attempt. This will be updated in the attempts counter on screen for the user to see.
+Based on the number of attempts made the user will be able to see how effective they were at finding the pairs.
 
-If the timer elapses, and the player has not found all the matching pairs, then a modal overlay will inform the player that they were unsuccessful in their attempt and prompt them to either restart the game or to quit to the main menu.
+If the timer elapses, and the player has not found all the matching pairs, then a modal overlay will inform the player that they were unsuccessful in their attempt and prompt them to either restart.
 
-If the player successfully matches all pairs within the time limit and will a predefined amount of attempted, then they will be displayed a winning modal overlay that will allow them to proceed to the next level.
-Upon successful competition of each level the player is presented with a summary screen that highlights their progress.
+If the player successfully matches all pairs within the time limit and will a predefined amount of attempted, then they will be displayed a winning modal overlay that will show them the details of their game session.
 
  
 ### Existing Features
@@ -68,7 +56,11 @@ For some/all of your features, you may choose to reference the specific project 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+
+1 - Adding game levels - The addition of additonal amounts of cards would add to the game difficulty, espically combined with the timer feature which would require users to be quick and effective in recalling the position of each of the cards.
+
+2 - The addition of a rating system - The rating system would be based out of a star rating. The user would start with 5 stars and then when they complete the game a function would check against a number of arguments as to whether the user had x amount of attemtps and display stars based on this. Example if the user took 30 clicks then they would get 5 stars, if they took 40 clicks then they would get 4 stars and so on. 
+
 
 ## Technologies Used
 
@@ -120,4 +112,18 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration and coding implemetation learning for this project from several sources:
+How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
+This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me form my idea and provide understanding of how to setup my html and css for later javascript.
+
+How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
+This tutorial is the second part of the explainer video, here the javascript method is explained, I used this resource to learn about how to implement the game logic in terms of setting up javascript classes, constructors, creation of audio classes/ constuctors and compliing these setups to run together. I completed this several times to further embed this learning and get a better understanding of how and why to setup my javascript in these ways.
+
+Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
+This tutorial was another breakdown of creating a javascript memory game, it was approached differently that the previous videos and served to help learn about the different ways that javascript can be implemented to develop similar outcomes. This served to help me frame my game idea and aided in my development  and learning of javascript implementation.
+
+Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
+This tutorial again took another approach of how to implement javascript to create a memory game. It taught me alot in regards to how to setup and implement javascript for a memory game aswell. being able to follow the flow of creating a javascript system greatly aided my learning and understanding.
+
+Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
+
