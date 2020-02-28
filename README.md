@@ -6,9 +6,9 @@ How to play: The player selects a card, which animates through flipping around t
 
 To add to the difficulty the user is faced with a countdown timer. All matches must be completed within a given time, of 60 seconds. 
 
-The timer is constantly displayed on screen as is the flip attempts counts and a rating of attempts very a pre-determined rating. Example: if there are 16 cards, that’s 8 pairs, if it takes the user 12 attempts, then that is a rating of green, if it takes 16 attempts then it is a rating of amber, 18+ attempts it is a red rating and the player needs to replay the game.
+The timer is constantly displayed on screen as is the flip attempts counts.
 
-At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of How many attempts it tool the user to find all the matches and how many seconds it took them.
+At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of how many attempts it tool the user to find all the matches and how many seconds it took them.
 
 ## Project Objectives / User Stories
 The main objectives of the game are:
