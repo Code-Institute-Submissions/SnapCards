@@ -1,5 +1,5 @@
 # Interactive Front End Development Project - Snap Card Game
-
+## Project Description
 This project consists of designing, coding and implementing an interactive game, named Snap Cards. Snap Cards is a memory game where by the user is presented with a number of cards, 16 , which are faced down at the game start. The aim of the game is to match pairs of these cards, within a time limit. At the  start of each game the cards are shuffled randomly, so that each new play thorugh is a new challenge.
 
 How to play: The player selects a card, which animates through flipping around to reveal what it is, the user then selects another card, which performs the same flipping action. If the cards match they stay facing up to the user and are added to a counter that indicates how many attempts the user has made. If they do not match, then they both flip back over, and the user carries on until they match a pair.
@@ -21,7 +21,7 @@ The main objectives of the game are:
 ## UX
 The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 seperate layers that are revealed as the situation and flow occurs. Those sections / layers are:
 
-## Game Structure
+### Game Structure / Features
 The entire game was developed as a single page, its structure follows this format:
 - Welcome page/screen, name entry area and game information
 - Click to start overlay - to allow the user to prepare prior to starting
@@ -68,8 +68,8 @@ The following wireframes are my initial design of the game, they served as a fra
 ![Wireframes Images - Start Page](Wireframes/start%20page.jpg)
 ![Wireframes Images - Start Page](Wireframes/2nd%20page.jpg)
 ![Wireframes Images - Game Page](Wireframes/game%20page.jpg)
-![Wireframes Images - Results PAge](Wireframes/results%20page.jpg)
-![Wireframes Images - Game OVer PAge](Wireframes/error%20page.jpg)
+![Wireframes Images - Results Page](Wireframes/results%20page.jpg)
+![Wireframes Images - Game OVer Page](Wireframes/error%20page.jpg)
 
 ## Features
 
