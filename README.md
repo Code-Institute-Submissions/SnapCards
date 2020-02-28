@@ -120,18 +120,18 @@ Acknowledgemets to the following in the construction, guidence and direction of 
 
 - w3schools for html, css and javascript tutorials
 
--How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
+- How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
 This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me form my idea and provide understanding of how to setup my html and css for later javascript.
 
--How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
+- How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
 This tutorial is the second part of the explainer video, here the javascript method is explained, I used this resource to learn about how to implement the game logic in terms of setting up javascript classes, constructors, creation of audio classes/ constuctors and compliing these setups to run together. I completed this several times to further embed this learning and get a better understanding of how and why to setup my javascript in these ways.
 
--Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
+- Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
 This tutorial was another breakdown of creating a javascript memory game, it was approached differently that the previous videos and served to help learn about the different ways that javascript can be implemented to develop similar outcomes. This served to help me frame my game idea and aided in my development  and learning of javascript implementation.
 
--Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
+- Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
 This tutorial again took another approach of how to implement javascript to create a memory game. It taught me alot in regards to how to setup and implement javascript for a memory game aswell. being able to follow the flow of creating a javascript system greatly aided my learning and understanding.
 
--Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
+- Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
 I worked through a javascript course at codeacademy which aided in my understanding of constructor classes, how to construct them and deployment.
 
