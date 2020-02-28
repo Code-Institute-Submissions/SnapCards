@@ -26,7 +26,7 @@
    <div class="container landing-page" id="landing-page">
     <div class="container menu">
         <div class="game-title">
-            <h3 class="h3-title">Snap Cards</h3>
+            <h3 class="h3-title" id="h3-title">Snap Cards</h3>
         </div>
         <div class="player-info">
             <h5 class="question">Match all the pairs to win the game!!</h5>
@@ -63,31 +63,39 @@
       <!-- Winning Overlay --> 
         <div class="overlays" id="winner">
            <h2> Congrats!! You have Won!!</h2> 
-            <div class="overlays-sml">You found all the pairs</div>
-            <div class="overlays-small">
+            <div class="overlays-small"><p>You found all the pairs</p>
                 <p>It only took you <span id="totalMoves"> </span> clicks</p>
-                <p>Time taken: <span id="timeTaken"> </span></p>   
+                <p>And you did it in only <span id="timeTaken"> </span> seconds</p>   
             </div>
-            <button id="retry" onclick="startGame()"> Go Again </button>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onclick="startGame()"> Go Again </button>
         </div>
 
         <!-- Out of Time Overlay  -->
         <div class="overlays" id="out-of-time">
-            You are Out of Time!!<br><br>
+           <p> You Ran Out of Time!!</p><br><br>
             Game over!!
-            <span class="overlays-sml">Click to Restart</span>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="startGame()">Retry</button>
         </div>
 
         <div class="container game-details">
            
-            <h3 class="game-title">Player : <span id="gamerId"> </span></h3>
+            <h3 class="player-title">Player : <span id="gamerId"> </span></h3>
                 <div class="game-container">
                     <div class="game-info-container">            
                         <div class="game-info">
-                            Time: <span id ="time-remaining">100</span>
+                            Time: <span id ="time-remaining">60</span>
                          </div>
                         <div class="game-info">
                             Flips: <span id ="flips">0</span>
+                        </div>
+                        <div class="game-info">
+                            <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
