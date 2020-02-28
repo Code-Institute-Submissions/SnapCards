@@ -92,38 +92,46 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This website is deployed on github pages. Deployment to my Github pages is done via gitpod IDE and direct editing of the github files in the repository system.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+### Deployment Steps
+1. Using the terminal window in gitpod IDE, adding the files to the staging area using the 'git add' command.
+2. Comminting these files to the git repository system with comments using the 'git commit -m "insert commentary" ' syntax.
+3. Deployment is made to the GitHub pages using the 'git push' command.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+All versions of the development process is held on the master branch.
+Initially I had developed the game in another repository, however I decided to restart the process and import images, audio, and base initial styles in my initial commit to this repository.  
 
-
+This site can be accessed directly through the following link: 
 ## Credits
 
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+- The media used for this site were a set of cards that were available to use with credits, this is credited in the css file. THe original images can be found here:
+
+- I edited these images to use the inner illustrations and exported them from illustrator to photoshop where I rendered them out as png files to reduce file size.
 
 ### Acknowledgements
+Acknowledgemets to the following in the construction, guidence and direction of this project
 
-- I received inspiration and coding implemetation learning for this project from several sources:
-How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
+- Rahul Patil for his mentoring advice
+
+- w3schools for html, css and javascript tutorials
+
+-How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
 This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me form my idea and provide understanding of how to setup my html and css for later javascript.
 
-How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
+-How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
 This tutorial is the second part of the explainer video, here the javascript method is explained, I used this resource to learn about how to implement the game logic in terms of setting up javascript classes, constructors, creation of audio classes/ constuctors and compliing these setups to run together. I completed this several times to further embed this learning and get a better understanding of how and why to setup my javascript in these ways.
 
-Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
+-Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
 This tutorial was another breakdown of creating a javascript memory game, it was approached differently that the previous videos and served to help learn about the different ways that javascript can be implemented to develop similar outcomes. This served to help me frame my game idea and aided in my development  and learning of javascript implementation.
 
-Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
+-Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
 This tutorial again took another approach of how to implement javascript to create a memory game. It taught me alot in regards to how to setup and implement javascript for a memory game aswell. being able to follow the flow of creating a javascript system greatly aided my learning and understanding.
 
-Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
+-Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
+I worked through a javascript course at codeacademy which aided in my understanding of constructor classes, how to construct them and deployment.
 
