@@ -63,7 +63,7 @@ If the player is unssuccessul in completing the game in time then they are prese
 The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
 
 #### Wireframes
-![Wireframes Images](assets/images/start%20page.jpg)
+![Wireframes Images](Wireframes/start page.jpg)
 
 ## Features
 
