@@ -38,10 +38,85 @@ There is a supporting screenshot of a completed game of matched pairs of cards b
 
 Below this image is an instruction for the player/user to fill in their name beneath. This has the required attribute attached to it. 
 Through filling in the text input field and clicking submit the player is brought to the next section / layer.
+##### Styles for Landing Page
+
+Initial H3 title styles
+.h3-title{
+    font-size:3em;
+    font-style: italic;
+    font-weight:900;
+    text-transform: uppercase;
+    color:rgb(222, 7, 7);
+}
+Animation instructions to repeat infinitely
+#h3-title{
+    animation: colorChange .5s ease-in-out infinite;
+}
+Keyframes - change from x color to y color
+@keyframes colorChange {
+    from {color:rgb(222, 7, 7)}
+    to {color:rgb(222, 211, 7)}
+}
+
+##### Player Name Input box Form
+
+<form action="name" method="get">
+  <input type="text" name="playerName" id ="playerName" class="inputBox" required>            
+    <br><br>
+  <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit" />
+</form>
+
+##### JavaScript function for Player Name submission and Click to Start Overlay
+
+// Function that takes the users inputted name value and displays it in a span within the game and also transitions the game from the landing page to the game page
+function getPlayerName(){
+    document.getElementById("gamerId").innerHTML = document.getElementById('playerName').value + "";
+    document.getElementById('landing-page').style.display = "none"; 
+    document.getElementById('game-page').style.display= "flex";
+}
 
 #### Click to start section
 
 Upon clicking on the submit button the landing page is hidden and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the palyer, so that the timer does not start counting down before the palyer is ready.
+
+##### HTML Click To Start
+Click To Start Overlay - Controlled through the rady function as a method to start the game.
+<div class="overlays visible" id="intro">
+   <div class="intro-text">Click to Begin!</div>
+</div>
+
+##### JavaScript Ready Function 
+//This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
+
+//This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
+function ready() {
+    let overlays = Array.from(document.getElementsByClassName('overlays'));
+    let cards = Array.from(document.getElementsByClassName('card'));
+    let game = new SnapCardGame(60, cards);
+    overlays.forEach(overlay => {
+    overlay.addEventListener('click', () => {
+    overlay.classList.remove('visible');
+    game.startGame(); 
+        });
+
+    });
+    // adds event listeners for each card and runs the funciton flipCard at each click of a card
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+            game.flipCard(card);
+            });
+    });
+}
+
+
+
+// statement that checks if the page DOM content has loaded before loading the javascript
+if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', ready());
+}else {
+    ready();
+}
+
 
 #### Game Area
 
