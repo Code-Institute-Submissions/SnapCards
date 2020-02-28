@@ -295,10 +295,9 @@ input{
     color: rgba(179, 41, 41,1);
 }
 
-#out-of-time p{
-   
-    
-}
+.stars-full{display:none}
+.stars-med{display:none}
+.stars-low{display:none}
 
 h2{
     margin-bottom:1.5rem!important;
