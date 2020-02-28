@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -29,7 +29,7 @@
             <h3 class="h3-title" id="h3-title">Snap Cards</h3>
         </div>
         <div class="player-info">
-            <h5 class="question">Match all the pairs to win the game!!</h5>
+            <h5 class="question">Match all the pairs within the time limit to win the game!!</h5>
         </div>
         <div class="game-snapshot">
             <img class="preview" src="assets/images/gamepreview.JPG">
@@ -41,11 +41,9 @@
             <h5 class="question">Type your name below and press Submit</h5>
             <br>
             <form action="name" method="get">
-                <input type="text" name="playerName" id ="playerName" class="inputBox">
-               
-            
+                <input type="text" name="playerName" id ="playerName" class="inputBox" required>            
             <br><br>
-            <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit"></input>
+            <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit" required />
         </form>
         </div>
     </div>
