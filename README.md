@@ -10,16 +10,6 @@ The timer is constantly displayed on screen as is the flip attempts counts and a
 
 At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of How many attempts it tool the user to find all the matches and how many seconds it took them.
 
-##Technologies
-###Bootstrap v4.4.1
-
-https://getbootstrap.com/docs/4.4/getting-started/introduction/
-Bootstrap is used in this project for the following areas:
-- Landing page
-- Sign in Button
-- General Buttons
-- 
-
 ## UX
 
 The game will be developed as a single interactive webpage. With a sign in page that requires a player to assign a name, this section of the page will be hidden upon name submission. It has a required input box, that ensures players have a name for the game they are playing. The home screen is styled with text information and an image of a completed game to give users an idea of what it is they have to do.
@@ -32,13 +22,13 @@ The objective of the game is to challenge the player to find, remember and match
 
 Wireframes are in a folder in the respository labelled wireframes
 
-##Page Structure
+## Page Structure
 The page structure follows this format:
-- 1. Welcome page, name entry area
-- 2. Click to start overlay
-- 3. Game area
-- 4. Winning overlay
-- 5. Game Over overlay
+- Welcome page, name entry area
+- Click to start overlay
+- Game area
+- Winning overlay
+- Game Over overlay
 
 ## Features
 
@@ -80,7 +70,14 @@ In addition, you may also use this section to discuss plans for additional featu
 
 
 ## Technologies Used
+### Bootstrap v4.4.1
 
+https://getbootstrap.com/docs/4.4/getting-started/introduction/
+
+Bootstrap is used in this project for the following areas:
+- Landing page
+- Sign in Button
+- General Buttons
 
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
