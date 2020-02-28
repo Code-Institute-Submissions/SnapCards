@@ -24,7 +24,6 @@ body{
 .container.landing-page{
     margin:0;
     padding:0;
-    height:100vh;
     margin-left:auto;
     margin-right:auto;
     background-size: contain;
@@ -103,10 +102,9 @@ input{
 .game-page{
     margin:0;
     padding:0;
-    height:100vh;
     margin-left:auto;
     margin-right:auto;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image:url('../images/cards.jpg');
