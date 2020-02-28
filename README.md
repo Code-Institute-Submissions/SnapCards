@@ -19,26 +19,7 @@ The main objectives of the game are:
 - Provide users with an explanation of what they are to do
 
 ## UX
-
-The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 seperate layers that are revealed as the situation and flow occurs. Those sections/ layers are:
-#### Landing Page
-The first section The player is brought to is the landing page. Here The player is introducted to the game. There is an animated flashing game name to highlight the game title. 
-
-Beneath this there is text explaining what the objective of the game is. That being to match pairs of cards within a time limit.
-There is a supporting screenshot of a completed game of matched pairs of cards beneath this to further inform the players.
-
-Below this image is an instruction for the player/user to fill in their name beneath. This has
-
-
-With a sign in page that requires a player to assign a name, this section of the page will be hidden upon name submission. It has a required input box, that ensures players have a name for the game they are playing. The home screen is styled with text information and an image of a completed game to give users an idea of what it is they have to do.
-
-The site is responsive in design, with the playable area designing to be displayed on mobile, tablet and desktop.
-
-The user base is targeted at 4 - 99, making the game accessible to all potential users, who enjoy challenging their memory and pattern sorting abilities. The timer and attempts also put a level of 'stakes' to the game. The results of the players performance are also aimed at appealing to users competitive nature, by trying to beat a previous score or previous time completed in.
-
-The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
-
-Wireframes are in a folder in the respository labelled wireframes
+The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 seperate layers that are revealed as the situation and flow occurs. Those sections / layers are:
 
 ## Game Structure
 The entire game was developed as a single page, its structure follows this format:
@@ -47,6 +28,41 @@ The entire game was developed as a single page, its structure follows this forma
 - Game area - Player Details - Time Remaining - Flips counter - Card matching area
 - Winning overlay - For situations where the player has completing the game in time
 - Game Over overlay - For situations where the player has not finished the game in time
+
+#### Landing Page
+The first section The player is brought to is the landing page. Here The player is introducted to the game. There is an animated flashing game name to highlight the game title. 
+
+Beneath this there is text explaining what the objective of the game is. That being to match pairs of cards within a time limit.
+
+There is a supporting screenshot of a completed game of matched pairs of cards beneath this to further inform the players.
+
+Below this image is an instruction for the player/user to fill in their name beneath. This has the required attribute attached to it. 
+Through filling in the text input field and clicking submit the player is brought to the next section / layer.
+
+#### Click to start section
+
+Upon clicking on the submit button the landing page is hidden and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the palyer, so that the timer does not start counting down before the palyer is ready.
+
+#### Game Area
+
+Once the player clicks the start button, that overlay is hidden and the game begins. 
+The timer starts counting down and the game background audio begins to play as well.
+As the player clicks each card the flips counter in the player information area updates. The timer counts down from the 60 seconds start time and the cards animate through rotating 180 degrees on the front card and 180 degs on the back back, thus providing a 3d illusion. A audio file plays of a card flipping.
+Once a match is found a audio file plays to indicate to the user that the cards have matched.
+Should the player match all the cards then a victory audio file plays and the next section is revealed
+
+#### Winning Overlay
+Upon successfully finding all of the cards the game screen is paused and a game winning overlay is rpesented to the player. This contains a winning message, with details about the players performance. THe player is presented with how many seconds it took them to complete the game and also how many attempts it took them to win. There is a button to play the game again, whereby the startgame funcito is invoked. This funciton resets the timer, counter and reshuffles the cards, just the same as if the player arrived at the game for the first time.
+
+#### Game Over Overlay
+If the player is unssuccessul in completing the game in time then they are presented with a game over screen. THis pauses the game page and informs the user that they were unsuccessful in their attemp and prompts them to retry. This is again makeing use of the startgame funciton and resets the game.
+
+
+
+#### Objectives
+The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
+
+#### Wireframes
 
 
 ## Features
@@ -62,7 +78,7 @@ After this point the player, assuming they replay from within the same session, 
 
 Once options have been selected the player is brought to the game screen. Here there is a start button to start the game. This is here so that the player has time is see the modal tool tips that will be made to explain what the player is to do. Once they either close the tool tips of complete them they are free to press start and begin the game.
 
-The game starts with when the user clicks a modal that asks them to click to start whent hey are ready, this triggers the timer to start counting down. From here the user can select cards by clicking on them. Each click of a card animates the element to display what is behind it. This flip of the card only last for 500ms, or upon clicking of a second card, they both stay flipped for 1 second, unless they match they will both revert back to their default positions.
+The game starts with when the user clicks a modal that asks them to click to start when they are ready, this triggers the timer to start counting down. From here the user can select cards by clicking on them. Each click of a card animates the element to display what is behind it. This flip of the card only last for 500ms, or upon clicking of a second card, they both stay flipped for 1 second, unless they match they will both revert back to their default positions.
 Matched cards will stay revealed for the duration of the game.
 
 Each click of a card will be counted as an attempt. This will be updated in the attempts counter on screen for the user to see.
