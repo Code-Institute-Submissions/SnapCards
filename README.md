@@ -10,9 +10,17 @@ The timer is constantly displayed on screen as is the flip attempts counts and a
 
 At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of How many attempts it tool the user to find all the matches and how many seconds it took them.
 
+## Project Objectives / User Stories
+The main objectives of the game are:
+- Build a Memory Game
+- Develop a game that provides a challenge for the user to complete and is fun
+- Build a simple single player pattern matching game
+- Create a game that includes, audio and visual patterns that compliment the game design
+- Provide users with an explanation of what they are to do
+
 ## UX
 
-The game will be developed as a single interactive webpage. With a sign in page that requires a player to assign a name, this section of the page will be hidden upon name submission. It has a required input box, that ensures players have a name for the game they are playing. The home screen is styled with text information and an image of a completed game to give users an idea of what it is they have to do.
+The game is developed as a single interactive webpage. With a sign in page that requires a player to assign a name, this section of the page will be hidden upon name submission. It has a required input box, that ensures players have a name for the game they are playing. The home screen is styled with text information and an image of a completed game to give users an idea of what it is they have to do.
 
 The site is responsive in design, with the playable area designing to be displayed on mobile, tablet and desktop.
 
@@ -22,17 +30,18 @@ The objective of the game is to challenge the player to find, remember and match
 
 Wireframes are in a folder in the respository labelled wireframes
 
-## Page Structure
-The page structure follows this format:
-- Welcome page, name entry area
-- Click to start overlay
-- Game area
-- Winning overlay
-- Game Over overlay
+## Game Structure
+The entire game was developed as a single page, its structure follows this format:
+- Welcome page/screen, name entry area and game information
+- Click to start overlay - to allow the user to prepare prior to starting
+- Game area - Player Details - Time Remaining - Flips counter - Card matching area
+- Winning overlay - For situations where the player has completing the game in time
+- Game Over overlay - For situations where the player has not finished the game in time
+
 
 ## Features
 
-The game will feature:
+The game features:
 A name entry feature, this will be a required field that the user must enter a player name for. This acts as a way of tying the player to the game, by having the player name be associated with them throughout the game and for the final scoring page.
 
 A menu screen that will consist of a difficulty selection menu system. Here the player will select the time limits, the number of cards the player will be challenged with and level of the game.
@@ -78,6 +87,32 @@ Bootstrap is used in this project for the following areas:
 - Landing page
 - Sign in Button
 - General Buttons
+- Game Container
+- Card items
+
+### Audio Files
+All audio files for this project were sourced from:
+- https://freesound.org/search/?q=background+game+music
+- http://soundbible.com/
+- https://www.bensound.com/
+
+Each of the sound files used has a free use assosicated with them and can be found in 'assets/audio' folder in the main repository
+
+### FontAwesome v4.7.0
+Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is refereneced as intented to be available should further developments to the game occur in the future.
+
+The Fontawesome link is from my own personal account with FontAwesome.
+
+https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+### GitHub repository
+
+This game is hosted on Github Project Name: Pysched/SnapCards
+GitHub Repository: https://github.com/Pysched/SnapCards
+Demo Link: https://pysched.github.io/SnapCards/
+
+### IDE
+This project was developed in part on the GitPod IDE, however for local testing and development and due to technical issues with gitpod, it was also developed with Visual Studio Code Editor.
 
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
