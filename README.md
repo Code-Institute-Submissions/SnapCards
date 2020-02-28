@@ -71,7 +71,7 @@ Form element was used to GET the information and use it again in the below fucti
   <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit" />
 </form>
 ````
-##### JavaScript function for Player Name submission and Click to Start Overlay
+#### JavaScript function for Player Name submission and Click to Start Overlay
 Function that takes the users inputted name value and displays it in a span within the game and also transitions the game from the landing page to the game page
 ````
 function getPlayerName(){
@@ -84,14 +84,14 @@ function getPlayerName(){
 
 Upon clicking on the submit button the landing page is hidden and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the palyer, so that the timer does not start counting down before the palyer is ready.
 
-##### HTML Click To Start
+#### HTML Click To Start
 Click To Start Overlay - Controlled through the ready function as a method to start the game.
 ````
 <div class="overlays visible" id="intro">
    <div class="intro-text">Click to Begin!</div>
 </div>
 ````
-##### JavaScript Ready Function 
+#### JavaScript Ready Function 
 
 This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
 
@@ -184,7 +184,53 @@ class AudioController {
 }
 
 ````
-The 
+The StartGame Function below Initialises the game and declares the variables to these values. THe comments below indicate each.
+
+````
+// StartGame Function -- On starting setup these variables to these values
+    startGame(){
+        // card selector
+        this.cardCheck = null;
+        // setting the clicks value as 0
+        this.totalClicks = 0; 
+        // pointing the timeremaining value at the totaltime varable
+        this.timeRemaining = this.totalTime;
+        // setting an empty array for matched cards to go into
+        this.matchedCards = [];
+        // setting the state of the actions, card is selected to true
+        this.selected = true;
+        // run card hide function
+        this.hideCards();
+        // pointing time at timeremaining varable
+        this.time.innerText = this.timeRemaining;
+        // pointing counter at totalclicks varable
+        this.counter.innerText = this.totalClicks;
+        //star rating
+        this.starRating = this.counter.innerText;
+        // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
+        setTimeout(() => {
+            this.audioController.startMusic();
+            this.shuffleCards();
+            this.selected = false;
+            this.countDown = this.startCountDown();
+        },500);
+    }
+````
+
+#### Hide Cards Function
+This function removes the visible and matched values from the cards classlists
+````
+  // set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when resetting or setting up for the first time
+    hideCards(){
+        this.cardsArray.forEach(card => {
+            card.classList.remove('visible');
+            card.classList.remove('matched');
+        });
+
+    }
+````
+
+
 
 
 
@@ -240,10 +286,70 @@ If the player is unssuccessul in completing the game in time then they are prese
  #### Card Flip Javascript
  The card flip JavaScript, logic,  is broken up into a number of functions. 
  The function is called as eventlisteners where added to each card, on clicking a card the flipcard function is run. This       function is declared with the parameter of card to refence the cards and checked whether the card can be flipped first thorugh the function canCardFlip
- 
- 
- 
+ ````
+ //card flippping function
+    flipCard(card){
+        // check first if the card can be flipped by calling the canCardFlip functon
+        if(this.canCardFlip(card)){
+            // If it can then play the audio sound for it
+            this.audioController.flip();
+            // Increment the totalclicks counter
+            this.totalClicks++;
+            // Change the counter to update the clicks made
+            this.counter.innerText = this.totalClicks;
+            // change the cards visiblility to visible
+            card.classList.add('visible');
+        // If the card is able to be check i.e it is not null,
+        if(this.cardCheck)
+        // Check for a match
+            this.cardMatchCheck(card);
+        else
+      // otherwise null = card
+            this.cardCheck = card;
+        }
 
+    }
+ 
+ ````
+ #### Can Card Flip
+ The below logic stipulates 3 not conditions that need to be in that state before a card can be flipped.
+ ````
+ // can the card flip conditions
+    canCardFlip(card){
+        return !this.selected && !this.matchedCards.includes(card) && card !== this.cardCheck;
+    }
+    //This functions logic is = return true -> if not this.selected and not This.matchedcards and  card is not this.cardcheck to enable card to be flipped
+ ````
+ #### Card Type
+ Check which card has been selected by -->
+ ````
+ // Check the card type by getting the class of card actual and checking which card it is for further match checking
+    cardtype(card){
+        return card.getElementsByClassName('card-actual')[0].src;
+    }
+ ````
+ 
+ #### Card Match
+ 
+ ````
+  // cards match - assign 2 parameters card 1 and card 2
+    cardMatch(card1, card2){
+        // push first card to varable card 1 and same to card 2
+        this.matchedCards.push(card1);
+        this.matchedCards.push(card2);
+        // add a class of matched to each 
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        //play the audio of cards matched
+        this.audioController.matched();
+        //if all matched cards equals the amount of cards, then the game is won and play the winning music
+        if(this.matchedCards.length === this.cardsArray.length)
+            this.winning();
+    }
+ 
+````
+
+#### Card Mis Match
 
 #### Objectives
 The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
