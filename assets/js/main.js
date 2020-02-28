@@ -78,6 +78,8 @@ class SnapCardGame {
         this.time.innerText = this.timeRemaining;
         // pointing counter at totalclicks varable
         this.counter.innerText = this.totalClicks;
+        //star rating
+        this.starRating = this.counter.innerText;
         // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
         setTimeout(() => {
             this.audioController.startMusic();
@@ -94,6 +96,8 @@ class SnapCardGame {
         });
 
     }
+
+  
 
 
 
@@ -162,6 +166,8 @@ class SnapCardGame {
         document.getElementById('out-of-time').classList.add('visible');
         
     }
+
+   
     // winning the game conditions
     winning(){
         clearInterval(this.countDown);
@@ -169,11 +175,12 @@ class SnapCardGame {
         document.getElementById('winner').classList.add('visible');
         document.getElementById('totalMoves').innerHTML = this.totalClicks;
         document.getElementById('timeTaken').innerHTML = this.totalTime - this.timeRemaining;
+        
     }
     // Card Shuffle function --- fisher Yeates Function for shuffling
     shuffleCards(){
         for(let i= this.cardsArray.length - 1; i > 0; i--){
-        let randomIndex = Math.floor(Math.random() * (7));
+        let randomIndex = Math.floor(Math.random() * (16));
         this.cardsArray[randomIndex].style.order = i;
         this.cardsArray[i].style.order = randomIndex;
         }
