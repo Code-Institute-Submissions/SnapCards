@@ -41,6 +41,7 @@ Through filling in the text input field and clicking submit the player is brough
 ##### Styles for Landing Page
 
 Initial H3 title styles
+````
 .h3-title{
     font-size:3em;
     font-style: italic;
@@ -57,38 +58,40 @@ Keyframes - change from x color to y color
     from {color:rgb(222, 7, 7)}
     to {color:rgb(222, 211, 7)}
 }
-
+````
 ##### Player Name Input box Form
-
+````
 <form action="name" method="get">
   <input type="text" name="playerName" id ="playerName" class="inputBox" required>            
     <br><br>
   <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit" />
 </form>
-
+````
 ##### JavaScript function for Player Name submission and Click to Start Overlay
 
 // Function that takes the users inputted name value and displays it in a span within the game and also transitions the game from the landing page to the game page
+````
 function getPlayerName(){
     document.getElementById("gamerId").innerHTML = document.getElementById('playerName').value + "";
     document.getElementById('landing-page').style.display = "none"; 
     document.getElementById('game-page').style.display= "flex";
 }
-
+````
 #### Click to start section
 
 Upon clicking on the submit button the landing page is hidden and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the palyer, so that the timer does not start counting down before the palyer is ready.
 
 ##### HTML Click To Start
 Click To Start Overlay - Controlled through the rady function as a method to start the game.
+````
 <div class="overlays visible" id="intro">
    <div class="intro-text">Click to Begin!</div>
 </div>
-
+````
 ##### JavaScript Ready Function 
-//This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
 
 //This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
+```
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
     let cards = Array.from(document.getElementsByClassName('card'));
@@ -108,7 +111,8 @@ function ready() {
     });
 }
 
-
+```
+```
 
 // statement that checks if the page DOM content has loaded before loading the javascript
 if(document.readyState === 'loading'){
@@ -116,7 +120,7 @@ if(document.readyState === 'loading'){
 }else {
     ready();
 }
-
+```
 
 #### Game Area
 
