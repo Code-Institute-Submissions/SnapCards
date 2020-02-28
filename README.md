@@ -90,14 +90,6 @@ Bootstrap is used in this project for the following areas:
 - Game Container
 - Card items
 
-### Audio Files
-All audio files for this project were sourced from:
-- https://freesound.org/search/?q=background+game+music
-- http://soundbible.com/
-- https://www.bensound.com/
-
-Each of the sound files used has a free use assosicated with them and can be found in 'assets/audio' folder in the main repository
-
 ### FontAwesome v4.7.0
 Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is refereneced as intented to be available should further developments to the game occur in the future.
 
@@ -160,9 +152,21 @@ This site can be accessed directly through the following link: https://pysched.g
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
+
+### #Visuals - Graphics
+
 - The media used for this site were a set of cards that were available to use with credits, this is credited in the css file. The original images can be found here: https://www.vecteezy.com/free-vector/playing-cardsPlaying Cards Vectors by Vecteezy
 
 - I edited these images to use the inner illustrations and exported them from illustrator to photoshop where I rendered them out as png files to reduce file size.
+
+#### Audio Files
+
+All audio files for this project were sourced from:
+- https://freesound.org/search/?q=background+game+music
+- http://soundbible.com/
+- https://www.bensound.com/
+
+Each of the sound files used has a free use assosicated with them and can be found in 'assets/audio' folder in the main repository
 
 ### Acknowledgements
 Acknowledgemets to the following in the construction, guidence and direction of this project
