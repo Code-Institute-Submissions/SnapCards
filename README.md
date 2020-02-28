@@ -130,20 +130,119 @@ if(document.readyState === 'loading'){
 
 ````
 
-#### Game Area
+#### Game Area & Audio Controller
 
 Once the player clicks the start button, that overlay is hidden and the game begins. 
 The timer starts counting down and the game background audio begins to play as well.
-As the player clicks each card the flips counter in the player information area updates. The timer counts down from the 60 seconds start time and the cards animate through rotating 180 degrees on the front card and 180 degs on the back back, thus providing a 3d illusion. A audio file plays of a card flipping.
+As the player clicks each card the flips counter in the player information area updates. 
+The timer counts down from the 60 seconds start time and the cards animate through rotating 180 degrees on the front card and 180 degs on the back back, thus providing a 3d illusion. A audio file plays of a card flipping.
+
 Once a match is found a audio file plays to indicate to the user that the cards have matched.
 Should the player match all the cards then a victory audio file plays and the next section is revealed
 
+An audioController class was created with a constuctor in it, this declares new audio instances of each audio track. The functions to call each of these instances are declared below the constructor to be called when required within the game.
+````
+// Create a class to manage the instances of audio tracks. 
+class AudioController {
+    constructor() {
+        this.bgMusic = new Audio('assets/audio/bgMusic.mp3');
+        this.flipSound = new Audio('assets/audio/cardFlip.wav');
+        this.matchSound = new Audio('assets/audio/success.wav');
+        this.winningSound = new Audio('assets/audio/winning.mp3');
+        this.gameOverSound = new Audio('assets/audio/gameover.mp3');
+        this.bgMusic.volume = 0.3; // audio volume decrease as it is quite loud from source
+        this.winningSound.volume = 0.8; // audio volume decrease so as not to startle people
+        this.bgMusic.loop = true;// loop the background game music to play over continously
+    }
+    // Start music function
+    startMusic() {
+        this.bgMusic.play();
+    }
+    //stop function for music, pause the current track and reset its time to 0
+    stopMusic(){
+        this.bgMusic.pause();
+        this.bgMusic.currentTime = 0;
+    }
+    // card flip sound
+    flip(){
+        this.flipSound.play();
+    }
+    // Card Match Sound
+    matched() {
+        this.matchSound.play();
+    }
+    // Winning Sound upon completion of game, by playing stop music function and playing winning sound function
+    winning() {
+        this.stopMusic();
+        this.winningSound.play();
+    }
+    // Game Over track, runs stopmusic function and plays gameover track
+    gameOver(){
+        this.stopMusic();
+        this.gameOverSound.play();
+    }
+}
+
+````
+The 
+
+
+
 #### Winning Overlay
-Upon successfully finding all of the cards the game screen is paused and a game winning overlay is rpesented to the player. This contains a winning message, with details about the players performance. THe player is presented with how many seconds it took them to complete the game and also how many attempts it took them to win. There is a button to play the game again, whereby the startgame funcito is invoked. This funciton resets the timer, counter and reshuffles the cards, just the same as if the player arrived at the game for the first time.
+Upon successfully finding all of the cards the game screen is paused and a game winning overlay is rpesented to the player. This contains a winning message, with details about the players performance. The player is presented with how many seconds it took them to complete the game and also how many attempts it took them to win, the javascript for this operation is detailed below.
+
+There is a button to play the game again, whereby the startgame function is invoked. This funciton resets the timer, counter and reshuffles the cards, just the same as if the player arrived at the game for the first time.
+
+````
+ // winning the game conditions
+    winning(){
+        // Clear the countdown time
+        clearInterval(this.countDown);
+        // Play the audio file for success
+        this.audioController.winning();
+        // Add a class of visible to the id of winner
+        document.getElementById('winner').classList.add('visible');
+        // Take the value of totalClicks and replace the inner html of the id total moves with that value 
+        document.getElementById('totalMoves').innerHTML = this.totalClicks;
+        // Take the starting time -> totaltime value and subtrack it from the time remaining value and replace the id of timetaken with its result
+        document.getElementById('timeTaken').innerHTML = this.totalTime - this.timeRemaining;
+    }
+    
+````
 
 #### Game Over Overlay
-If the player is unssuccessul in completing the game in time then they are presented with a game over screen. THis pauses the game page and informs the user that they were unsuccessful in their attemp and prompts them to retry. This is again makeing use of the startgame funciton and resets the game.
+If the player is unssuccessul in completing the game in time then they are presented with a game over screen. This pauses the game page and informs the user that they were unsuccessful in their attemp and prompts them to retry. This is again making use of the startgame function and resets the game, this function is run when clicking the go agin button in the html.
+````
+// gameover conditions
+    gameOver(){
+        // Clear the countdown timer
+        clearInterval(this.countDown);
+        // Play the audio instance of game over
+        this.audioController.gameOver();
+        // Add a class of visible to the id of out-of-time
+        document.getElementById('out-of-time').classList.add('visible');
+        
+    }
+````
 
+#### Card Shuffle Function Fisher / Yeats Function
+````
+  // Card Shuffle function --- fisher Yeates Function for shuffling
+    shuffleCards(){
+        for(let i= this.cardsArray.length - 1; i > 0; i--){
+        let randomIndex = Math.floor(Math.random() * (16));
+        this.cardsArray[randomIndex].style.order = i;
+        this.cardsArray[i].style.order = randomIndex;
+        }
+    }
+ ````
+ 
+ #### Card Flip Javascript
+ The card flip JavaScript, logic,  is broken up into a number of functions. 
+ The function is called as eventlisteners where added to each card, on clicking a card the flipcard function is run. This       function is declared with the parameter of card to refence the cards and checked whether the card can be flipped first thorugh the function canCardFlip
+ 
+ 
+ 
 
 
 #### Objectives
