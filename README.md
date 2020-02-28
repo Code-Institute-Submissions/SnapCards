@@ -1,8 +1,8 @@
 # Interactive Front End Development Project - Snap Card Game
 
-This project consists of designing an interactive game, snap. Snap is a card game where by the user is presented with a number of cards, 16 to start with, which are faced down. The aim of the game is to match pairs of cards. There are 3 levels to the game. The first level is play cards to be matched, by number and by suit, hearts, clubs, spades and diamonds. The second level is shapes, this will be similar shapes, with subtle differences to increase the difficulty. The 3rd level will be patterns, all the same colour but again with more subtle differences.
+This project consists of designing an interactive game, SnapCards. Snap is a card game where by the user is presented with a number of cards, 16 , which are faced down at game start. The aim of the game is to match pairs of cards, within a time limit. As on each start of the game the cards are shuffled randomly, each new play thorugh is a new challenge
 
-How to play: The player selects a card, which animates flipping over to reveal what it is, the user then selects another card, which performs the same action. If the cards match they stay facing up to the user and are added to a counter that indicates how many pairs the user has found. If they do not match, then they both flip back down, and the user carries on until they match a pair.
+How to play: The player selects a card, which animates flipping over to reveal what it is, the user then selects another card, which performs the same flipping action. If the cards match they stay facing up to the user and are added to a counter that indicates how many pairs the user has found. If they do not match, then they both flip back down, and the user carries on until they match a pair.
 
 To add to the difficulty the user is faced with a countdown timer. All matches must be completed within a given time (to be determined through play through and assessment of difficulty). The user is also rated against how many attempts that they have made, A live scale beside the attempts counter will indicate from green to red how effective the player is.
 
@@ -35,7 +35,7 @@ Wireframes are in a folder in the respository labelled wireframes
 ## Features
 
 The game will feature:
-A sign in function, this will be a required field that the user must enter a player name for. This acts as a way of tying the player to the game, by having the player name be associated with them throughout the game and for the final scoring page.
+A name entry feature, this will be a required field that the user must enter a player name for. This acts as a way of tying the player to the game, by having the player name be associated with them throughout the game and for the final scoring page.
 
 A menu screen that will consist of a difficulty selection menu system. Here the player will select the time limits, the number of cards the player will be challenged with and level of the game.
 
