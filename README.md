@@ -153,7 +153,7 @@ This site can be accessed directly through the following link: https://pysched.g
 
 ### Media
 
-### #Visuals - Graphics
+#### Visuals - Graphics
 
 - The media used for this site were a set of cards that were available to use with credits, this is credited in the css file. The original images can be found here: https://www.vecteezy.com/free-vector/playing-cardsPlaying Cards Vectors by Vecteezy
 
@@ -174,6 +174,8 @@ Acknowledgemets to the following in the construction, guidence and direction of 
 - Rahul Patil for his mentoring advice
 
 - w3schools for html, css and javascript tutorials
+
+### Tutorials and Learnings
 
 - How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
 This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me form my idea and provide understanding of how to setup my html and css for later javascript.
