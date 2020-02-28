@@ -51,7 +51,6 @@ body{
     margin:0;
     height:400px;
     margin:auto;
-   
 }
 
 img.preview{
@@ -86,7 +85,14 @@ input{
 }
 
 
+#h3-title{
+    animation: colorChange .5s ease-in-out infinite;
+}
 
+@keyframes colorChange {
+    from {color:rgb(222, 7, 7)}
+    to {color:rgb(222, 211, 7)}
+}
 
 
 
@@ -95,7 +101,8 @@ input{
 
 
 .game-page{
-    display:none;
+    margin:0;
+    padding:0;
     height:100vh;
     margin-left:auto;
     margin-right:auto;
@@ -103,17 +110,23 @@ input{
     background-position: center;
     background-repeat: no-repeat;
     background-image:url('../images/cards.jpg');
+    display:none;
+    justify-content: center;
+    align-items: center;
   }
   
   .game-page-content{
     display:flow-root;
     height:auto;
+    border:4px solid rgba(179, 41, 41,.8);
+    background-color: rgba(0,0,0,.6);
+    border-radius: 5px;
   }
   
   .game-details{
-    background-color:#fff;
+    background-color:rgba(0, 0, 0,.6);
     width:max-content;
-    
+    border:4px solid rgba(179, 41, 41,.8);
   }
 
   #playerName{
@@ -121,16 +134,43 @@ input{
     text-align:center;
     font-weight:normal;
   }
+
+  .stars{
+    list-style: none;
+    display: inline-flex;
+  }
+
+  .fa-star{
+      padding-right:5px;
+  }
   
 
   .game-info-container{
     display:flex;
     grid-column:1/-1;
-    justify-content: space-evenly;
+    justify-content: space-between;
+  }
+
+  .game-info{
+    color:rgb(179, 41, 41);
+    font-size:1.5em;
+    font-style: italic;
+    font-weight:900;
+    padding-left:15px;
   }
 
 .fa-star {
 	color: #FFD700;
+}
+
+.player-title{
+    text-align: center;
+    color:rgb(219, 236, 28);
+    font-size:2em;
+    font-style: italic;
+    font-weight:900;
+    padding-left:15px;
+    margin-top:10px;
 }
   
   
@@ -138,9 +178,22 @@ input{
     display:grid;
     grid-template-columns: repeat(4, auto);
     grid-gap:15px;
-    margin:50px;
+    padding:15px;
+    margin-bottom: 0;
     justify-content: center;
     perspective:1000px;
+  }
+
+  .container.game-details{
+
+    width:100%;
+  }
+
+  .card-game{
+      padding: 5px;
+      padding-bottom:15px;
+      background-color:rgba(0, 0, 0,.6);
+      border:4px solid rgba(179, 41, 41,.8);
   }
   
   .card{
@@ -233,12 +286,25 @@ input{
 
 .overlays-small{
   font-size:.3em;
+  text-align: center;
+  margin-bottom:20px;
 }
 
-#winner{
-  width:640px;
-  height:640px;
+#timeTaken, #totalMoves{
+    font-weight:700;
+    color: rgba(179, 41, 41,1);
 }
+
+#out-of-time p{
+   
+    
+}
+
+h2{
+    margin-bottom:1.5rem!important;
+}
+
+
 
 
 
@@ -252,5 +318,6 @@ input{
     .game-info-container{
         flex-direction:column;
         align-items:center;
+        justify-content: space-between;
     }
   }
