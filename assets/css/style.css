@@ -232,7 +232,10 @@ input{
   .card.visible .card-front{
     transform:rotateY(0);
   }
-  
+  .card-front:hover .card-actual{
+    transform:scale(1);
+  }
+
 
   
   .overlays{
