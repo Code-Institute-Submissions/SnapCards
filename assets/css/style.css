@@ -233,9 +233,7 @@ input{
     transform:rotateY(0);
   }
   
-  .card-front:hover .card-actual{
-    transform:scale(1);
-  }
+
   
   .overlays{
   display:none;
