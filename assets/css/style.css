@@ -267,11 +267,7 @@ input{
     -webkit-transform:rotateY(0);
   }
   
-  .card-actual{
-    position: relative;
-  transition: transform 100ms ease-in-out;
-  transform: scale(.9);
-  }
+ 
   .card-front:hover .card-actual{
     transform:scale(1);
     -o-transform:scale(1);
