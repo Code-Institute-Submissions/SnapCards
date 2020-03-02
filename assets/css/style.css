@@ -182,7 +182,7 @@ input{
     padding:15px;
     margin-bottom: 0;
     justify-content: center;
-    perspective:500px;
+    perspective:1000px;
   }
 
   .container.game-details{
