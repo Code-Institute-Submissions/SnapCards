@@ -64,33 +64,19 @@
             <div class="overlays-small"><p>You found all the pairs</p>
                 <p>It only took you <span id="totalMoves"> </span> clicks</p>
                 <p>And you did it in only <span id="timeTaken"> </span> seconds</p>   
-                <ul class="stars-full">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                </ul>
-
-                <ul class="stars-med">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i>
-                </ul>
-
-                <ul class="stars-low">
-                    <li><i class="fa fa-star"></i></li>
-                    
-                </ul>
+               
             </div>
             <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onclick="startGame()"> Go Again </button>
         </div>
 
         <!-- Out of Time Overlay  -->
         <div class="overlays" id="out-of-time">
-           <p> You Ran Out of Time!!</p><br><br>
-           <p> Game over!!</p>
-            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="startGame()">Retry</button>
+            <div class="gameOver">
+           <p class="gameover-text"> You Ran Out of Time!!</p>
+           <p class="gameover-text"> Game over!!</p>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="startGame()">Let's Go Again</button>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="window.location.href='index.html'">I've had Enough</button>
+        </div>
         </div>
 
         <div class="container game-details">
