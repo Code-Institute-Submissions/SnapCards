@@ -357,11 +357,11 @@ The objective of the game is to challenge the player to find, remember and match
 #### Wireframes
 The following wireframes are my initial design of the game, they served as a framework to work towards, the final product is very similar to this initial design.
 
-![Wireframes Images - Start Page](Wireframes/start%20page.jpg)
-![Wireframes Images - Start Page](Wireframes/2nd%20page.jpg)
-![Wireframes Images - Game Page](Wireframes/game%20page.jpg)
-![Wireframes Images - Results Page](Wireframes/results%20page.jpg)
-![Wireframes Images - Game OVer Page](Wireframes/error%20page.jpg)
+![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/start_page_uovwss.jpg)
+![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/game_page_lettwf.jpg)
+![Wireframes Images - Game Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/results_page_scnxnl.jpg)
+![Wireframes Images - Results Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/2nd_page_w9rulf.jpg)
+![Wireframes Images - Game OVer Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/error_page_dxizsm.jpg)
 
 ## Features
 
@@ -386,7 +386,31 @@ If the timer elapses, and the player has not found all the matching pairs, then 
 
 If the player successfully matches all pairs within the time limit and will a predefined amount of attempted, then they will be displayed a winning modal overlay that will show them the details of their game session.
 
- 
+#### Home Page Game Completed Image
+The image in the center of the landing page is a screenshot from a play through of the game, this is used to illustrate to the players how a completed game would look like and the objective. The image is available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg
+
+#### Background Image for Landing Page and Game Page
+The image used as the background for the landing and game page is taken from https://wallpapercave.com/w/2YPxgPL . It is hosted on Cloudinary available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/cards_el9qnq.jpg
+
+#### Cards
+The cards used in the game where taken from https://www.vecteezy.com/free-vector/playing-cardsPlaying , modified and rendered out as pngs in photoshop and are credited below, they are free to use with such attribution. They are hosted on cloudinary at: 
+
+https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png
+https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png
+https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png
+https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png
+https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png
+https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png
+https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/7_h4gbbz.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/6_ndmbpq.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/3_nqaduh.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/5_ddx535.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/2_vq72ey.png
+https://res.cloudinary.com/pysched/image/upload/v1583235668/images/4_rjq7rh.png
+
 ### Existing Features
 
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
@@ -414,6 +438,11 @@ Bootstrap is used in this project for the following areas:
 - General Buttons
 - Game Container
 - Card items
+
+
+### Cloudinary Image Manager
+All images used in the game and in this README.md file are stored and hosted on Cloudinary.
+https://cloudinary.com 
 
 ### FontAwesome v4.7.0
 
