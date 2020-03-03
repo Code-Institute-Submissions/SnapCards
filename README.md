@@ -395,21 +395,21 @@ The image used as the background for the landing and game page is taken from htt
 #### Cards
 The cards used in the game where taken from https://www.vecteezy.com/free-vector/playing-cardsPlaying , modified and rendered out as pngs in photoshop and are credited below, they are free to use with such attribution. They are hosted on cloudinary at: 
 
-https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png
-https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png
-https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png
-https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png
-https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png
-https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png
-https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/7_h4gbbz.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/6_ndmbpq.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/3_nqaduh.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/5_ddx535.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/2_vq72ey.png
-https://res.cloudinary.com/pysched/image/upload/v1583235668/images/4_rjq7rh.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/7_h4gbbz.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/6_ndmbpq.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/3_nqaduh.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/5_ddx535.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/2_vq72ey.png
+- https://res.cloudinary.com/pysched/image/upload/v1583235668/images/4_rjq7rh.png
 
 ### Existing Features
 
