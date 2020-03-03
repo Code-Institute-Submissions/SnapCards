@@ -296,6 +296,31 @@ input{
 h2{
     margin-bottom:1.5rem!important;
 }
+
+.winningOver{
+  text-align: center;
+  border:5px solid red;
+  width:70%;
+  padding:15px;
+}
+
+#winner{
+  font-style:oblique;
+  font-weight:600;
+}
+
+#totalMoves{
+  animation: colorChange .5s ease-in-out infinite;
+}
+
+#timeTaken{
+  animation: colorChange .5s ease-in-out infinite;
+}
+
+#youWon{
+  font-weight:700;
+  animation: colorChange .5s ease-in-out infinite;
+}
  
   
   /* -- Media Query -- */
@@ -324,5 +349,14 @@ h2{
       animation: colorChange .5s ease-in-out infinite;
       font-style: oblique;
     }
+
+    .winningOver{
+      text-align: center;
+      border:5px solid red;
+      width:70%;
+      
+    }
+
+
     
   }
