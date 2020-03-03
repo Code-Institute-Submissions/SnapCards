@@ -321,6 +321,20 @@ h2{
   font-weight:700;
   animation: colorChange .5s ease-in-out infinite;
 }
+
+.gameOver{
+  text-align: center;
+  border:5px solid red;
+  width:70%;
+}
+.gameover-text{
+  font-size:2.8rem;
+  font-weight:600;
+  animation: colorChange .5s ease-in-out infinite;
+  font-style: oblique;
+}
+
+
  
   
   /* -- Media Query -- */
