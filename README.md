@@ -357,11 +357,11 @@ The objective of the game is to challenge the player to find, remember and match
 #### Wireframes
 The following wireframes are my initial design of the game, they served as a framework to work towards, the final product is very similar to this initial design.
 
-![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/start_page_uovwss.jpg)
-![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/game_page_lettwf.jpg)
-![Wireframes Images - Game Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/results_page_scnxnl.jpg)
-![Wireframes Images - Results Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/2nd_page_w9rulf.jpg)
-![Wireframes Images - Game OVer Page](https://res.cloudinary.com/pysched/image/upload/v1583263837/images/error_page_dxizsm.jpg)
+![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_400/v1583263837/images/start_page_uovwss.jpg)
+![Wireframes Images - Results Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_400/v1583263837/images/2nd_page_w9rulf.jpg)
+![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_345/v1583263837/images/game_page_lettwf.jpg)
+![Wireframes Images - Game Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_345/v1583263837/images/results_page_scnxnl.jpg)
+![Wireframes Images - Game OVer Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_345/v1583263837/images/error_page_dxizsm.jpg)
 
 ## Features
 
