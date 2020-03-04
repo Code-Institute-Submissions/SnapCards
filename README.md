@@ -153,6 +153,15 @@ function getPlayerName(){
     document.getElementById('game-page').style.display= "flex";
 }
 ````
+Updated function to arrow function based on feedback from Mentor:
+````
+getPlayerName = () => {
+    document.getElementById("gamerId").innerHTML = document.getElementById('playerName').value + "";
+    document.getElementById('landing-page').style.display = "none";
+    document.getElementById('game-page').style.display = "flex";
+}
+
+````
 #### Click to start section
 
 Upon clicking on the submit button the landing page is hidden and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the palyer, so that the timer does not start counting down before the palyer is ready.
@@ -201,6 +210,27 @@ if(document.readyState === 'loading'){
     ready();
 }
 
+````
+Updated functio to arrow function and changed .forEach method to .map
+````
+ready = () => {
+    let overlays = Array.from(document.getElementsByClassName('overlays'));
+    let cards = Array.from(document.getElementsByClassName('card'));
+    let game = new SnapCardGame(60, cards);
+    overlays.map(overlay => {
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('visible');
+            game.startGame();
+        });
+
+    });
+    // adds event listeners for each card and runs the funciton flipCard at each click of a card
+    cards.map(card => {
+        card.addEventListener('click', () => {
+            game.flipCard(card);
+        });
+    });
+}
 ````
 
 #### Game Area & Audio Controller
@@ -468,24 +498,59 @@ Testing was carried out by making use of the following devices/browsers:
 #### Desktop
 
 
+#### Mobile
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+### Functional Tests
+#### Test:Player Name Captured
+1. Input of Player Name
+2. Submit Player Name
+3. Required attribute works for no name entry
+4. Player Name displays within game page informatio section
+5. Player Name displays in Winning overlay
+6. Player Name displays in Game Over Overlay
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+#### Test: Click To Start Overlay
+1. Overlay displays
+2. On click overlay is hidden
+3. Game Starts with count down timer and game music
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+#### Test: Game Functionality Works
+1. Attempts Counter increments based on each click
+2. Cards animate onclick
+3. The same card does not count if clicked twice as an attempt or as a second card
+4. Only 2 cards, outside of any previous matched cards are flipped at one time
+5. Matches stay flipped
+6. Match sound plays on matching of cards
+7. Success audio plays once all matches are found
+8. Game over audio plays if timer runs out
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+#### Test: Game Over Overlay works
+1. Upon timer counting down to 0 the game over overlay displays information that the player has run out of time.
+2. The retry button starts the game again
+3. The back to home page button brings the user back to the landing screen
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+
+#### Test: Winning Overlay Works
+1. On successful matching of all cards the winning overlay displays
+2. The amount of time remain is subtracted from the total time and displayed as the amount of time taken for the palyer to complete the game
+3. The number of attempts is aquired and displayed within the winning overlay
+4. The player name is pulled from the input and displayed in the winning overlay
+5. The retry button resets the game
+6. The back to home page button brings the user back to the landing/home page
+
+
+
+
+
+
+#### Bugs Found
+1. Despite the use of a form and the get method the required tag is not functioning, hence a player can enter no name, while not game breaking, the implementation of the required tag is not working.
+
+
+
+
 
 ## Deployment
 
