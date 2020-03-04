@@ -1,50 +1,37 @@
 // Function that takes the users inputted name value and displays it in a span within the game and also transitions the game from the landing page to the game page
-function getPlayerName(){
+ getPlayerName = () => {
     document.getElementById("gamerId").innerHTML = document.getElementById('playerName').value + "";
     document.getElementById('landing-page').style.display = "none"; document.getElementById('game-page').style.display="flex";
 }
 
+const bgMusic = new Audio('assets/audio/bgMusic.mp3', volume = 0.3, loop = true);
+const flipSound = new Audio('assets/audio/cardFlip.wav');
+const matchSound = new Audio('assets/audio/success.wav');
+const winningSound = new Audio('assets/audio/winning.mp3', volume = 0.6);
+const gameOverSound = new Audio('assets/audio/gameover.mp3');
 
-// Create a class to manage the instances of audio tracks. 
-class AudioController {
-    constructor() {
-        this.bgMusic = new Audio('assets/audio/bgMusic.mp3');
-        this.flipSound = new Audio('assets/audio/cardFlip.wav');
-        this.matchSound = new Audio('assets/audio/success.wav');
-        this.winningSound = new Audio('assets/audio/winning.mp3');
-        this.gameOverSound = new Audio('assets/audio/gameover.mp3');
-        this.bgMusic.volume = 0.3; // audio volume decrease as it is quite loud from source
-        this.winningSound.volume = 0.8; // audio volume decrease so as not to startle people
-        this.bgMusic.loop = true;// loop the background game music to play over continously
-    }
+
+
+
     // Start music function
-    startMusic() {
-        this.bgMusic.play();
-    }
+    startMusic = () =>bgMusic.play();
+    
     //stop function for music, pause the current track and reset its time to 0
-    stopMusic(){
-        this.bgMusic.pause();
-        this.bgMusic.currentTime = 0;
-    }
+    stopMusic = () => {bgMusic.pause(); bgMusic.currentTime = 0;}
+    
     // card flip sound
-    flip(){
-        this.flipSound.play();
-    }
+    flip = () => flipSound.play();
+   
     // Card Match Sound
-    matched() {
-        this.matchSound.play();
-    }
+    matched = () => matchSound.play();
+    
     // Winning Sound upon completion of game, by playing stop music function and playing winning sound function
-    winning() {
-        this.stopMusic();
-        this.winningSound.play();
-    }
+    winning = () => {stopMusic();winningSound.play();}
+    
     // Game Over track, runs stopmusic funciton and plays gameover track
-    gameOver(){
-        this.stopMusic();
-        this.gameOverSound.play();
-    }
-}
+    gameOver = () => {stopMusic();gameOverSound.play();}
+    
+
 
 
 
@@ -56,7 +43,7 @@ class SnapCardGame {
         this.timeRemaining = totalTime;
         this.time = document.getElementById('time-remaining');
         this.counter = document.getElementById('flips');
-        this.audioController = new AudioController();
+        this.audioController = new Audio();
         
     }
     // StartGame Function -- On starting setup these variables to these values
@@ -78,10 +65,10 @@ class SnapCardGame {
         // pointing counter at totalclicks varable
         this.counter.innerText = this.totalClicks;
         //star rating
-        this.starRating = this.counter.innerText;
+        this.starRating = this.totalClicks;
         // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
         setTimeout(() => {
-            this.audioController.startMusic();
+            startMusic();
             this.shuffleCards();
             this.selected = false;
             this.countDown = this.startCountDown();
@@ -89,19 +76,19 @@ class SnapCardGame {
     }
     // set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when restting or setting up for the first time
     hideCards(){
-        this.cardsArray.forEach(card => {
+        this.cardsArray.map(card => {
             card.classList.remove('visible');
             card.classList.remove('matched');
         });
 
     }
 
-    // card flippping function
+    // card flipping function
     flipCard(card){
         // check first if the card can be flipped by calling the canCardFlip functon
         if(this.canCardFlip(card)){
             // If it can then play the audio sound for it
-            this.audioController.flip();
+            flip();
             // Increment the totalclicks counter
             this.totalClicks++;
             // Change the counter to update the clicks made
@@ -141,7 +128,7 @@ class SnapCardGame {
         card1.classList.add('matched');
         card2.classList.add('matched');
         //play the audio of cards matched
-        this.audioController.matched();
+        matched();
         //if all matched cards equals the amount of cards, then the game is won and play the winning music
         if(this.matchedCards.length === this.cardsArray.length)
             this.winning();
@@ -170,11 +157,13 @@ class SnapCardGame {
         // Clear the countdown timer
         clearInterval(this.countDown);
         // Play the audio instance of game over
-        this.audioController.gameOver();
+        gameOver();
         // Add a class of visible to the id of out-of-time
         document.getElementById('out-of-time').classList.add('visible');
         
     }
+
+   
 
    
     // winning the game conditions
@@ -182,13 +171,15 @@ class SnapCardGame {
         // Clear the countdown time
         clearInterval(this.countDown);
         // Play the audio file for success
-        this.audioController.winning();
+        winning();
         // Add a class of visible to the id of winner
         document.getElementById('winner').classList.add('visible');
         // Take the value of totalClicks and replace the inner html of the id total moves with that value 
         document.getElementById('totalMoves').innerHTML = this.totalClicks;
         // Take the starting time -> totaltime value and subtrack it from the time remaining value and replace the id of timetaken with its result
         document.getElementById('timeTaken').innerHTML = this.totalTime - this.timeRemaining;
+       
+        
     }
     // Card Shuffle function --- fisher Yeates Function for shuffling
     shuffleCards(){
@@ -210,11 +201,11 @@ class SnapCardGame {
 
 
 //This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
-function ready() {
+ ready = () => {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new SnapCardGame(60, cards);
-    overlays.forEach(overlay => {
+    overlays.map(overlay => {
     overlay.addEventListener('click', () => {
     overlay.classList.remove('visible');
     game.startGame(); 
@@ -222,7 +213,7 @@ function ready() {
 
     });
     // adds event listeners for each card and runs the funciton flipCard at each click of a card
-        cards.forEach(card => {
+        cards.map(card => {
             card.addEventListener('click', () => {
             game.flipCard(card);
             });
