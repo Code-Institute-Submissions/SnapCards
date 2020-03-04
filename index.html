@@ -64,7 +64,7 @@
             <!-- Winning Overlay -->
             <div class="overlays" id="winner">
                 <div class="winningOver">
-                    <h2 id="youWon"> Congrats!! You have Won!!</h2>
+                    <h2 id="youWon"><span id="gamerId"> </span> Congrats!! You Won!!</h2>
                     <div class="overlays-small">
                         <p>You found all the pairs</p>
                         <p>It only took you <span id="totalMoves"> </span> clicks</p>
@@ -79,6 +79,7 @@
             <!-- Out of Time Overlay  -->
             <div class="overlays" id="out-of-time">
                 <div class="gameOver">
+                    <p class="gameover-text"><span id="gamerId"> </span>What Happened?? </p>
                     <p class="gameover-text"> You Ran Out of Time!!</p>
                     <p class="gameover-text"> Game over!!</p>
                     <button id="retry" type="button" class="btn btn-danger btn-round-lg" onClick="startGame()">Let's Go Again</button>
