@@ -1,6 +1,6 @@
 # Interactive Front End Development Project - Snap Card Game
 ## Project Description
-This project consists of designing, coding and implementing an interactive game, named Snap Cards. Snap Cards is a memory game where by the user is presented with a number of cards, 16 , which are faced down at the game start. The aim of the game is to match pairs of these cards, within a time limit. At the  start of each game the cards are shuffled randomly, so that each new play thorugh is a new challenge.
+This project consists of designing, coding and implementing an interactive game, named Snap Cards. Snap Cards is a memory game where by the user is presented with a number of cards, 16 , which are faced down at the game start. The aim of the game is to match pairs of these cards, within a time limit. At the start of each game the cards are shuffled randomly, so that each new play through is a new challenge.
 
 How to play: The player selects a card, which animates through flipping around to reveal what it is, the user then selects another card, which performs the same flipping action. If the cards match they stay facing up to the user and are added to a counter that indicates how many attempts the user has made. If they do not match, then they both flip back over, and the user carries on until they match a pair.
 
@@ -8,7 +8,7 @@ To add to the difficulty the user is faced with a countdown timer. All matches m
 
 The timer is constantly displayed on screen as is the flip attempts counts.
 
-At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of how many attempts it tool the user to find all the matches and how many seconds it took them.
+At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of how many attempts it tools the user to find all the matches and how many seconds it took them.
 
 ## Technologies Used
 ### Bootstrap v4.4.1
@@ -29,7 +29,7 @@ https://cloudinary.com
 
 ### FontAwesome v4.7.0
 
-Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is refereneced as intented to be available should further developments to the game occur in the future.
+Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is referenced as intended to be available should further developments to the game occur in the future.
 
 The Fontawesome link is from my own personal account with FontAwesome.
 
@@ -50,7 +50,7 @@ The main objectives of the game are:
 - Build a Memory Game
 - Develop a game that provides a challenge for the user to complete and is fun
 - Build a simple single player pattern matching game
-- Create a game that includes, audio and visual patterns that compliment the game design
+- Create a game that includes, audio and visual patterns that complement the game design
 - Provide users with an explanation of what they are to do
 
 ## Wireframes
@@ -60,26 +60,26 @@ The following wireframes are my initial design of the game, they served as a fra
 - ![Wireframes Images - Results Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/2nd_page_w9rulf.jpg)
 - ![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/game_page_lettwf.jpg)
 - ![Wireframes Images - Game Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/results_page_scnxnl.jpg)
-- ![Wireframes Images - Game OVer Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/error_page_dxizsm.jpg)
+- ![Wireframes Images - Game Over Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/error_page_dxizsm.jpg)
 
 ## Features
 
 The game features:
 - Landing page with a player name entry feature, this will be a required field that the user must enter a player name for. This acts as a way of tying the player to the game, by having the player name be associated with them throughout the game and for the final scoring page.
 
-- Game instructions on the landing page in the form of text description of the game purpose and an image that shows the completed actions, that of amtching all the pairs
+- Game instructions on the landing page in the form of text description of the game purpose and an image that shows the completed actions, that of matching all the pairs
 
 - A Click to start modal overlay to allow the player to control when they start the game. Once clicked the background music starts playing, the timer starts counting down and the game is on.
 
 - A game page with: 
 -- Player name from the landing page displayed
 -- A count down timer indicating how much time remains
--- A filps counter to indicate how many attempts it has taken
+-- A flips counter to indicate how many attempts it has taken
 -- Retry Button if the player choses to restart during the game
 -- A Back to landing page button if the player wants to quit
 -- The game area, where all the cards are presented and animate flipping over to reveal what cards they are.
 
-- A winning overlay that is reveiled upon successful completetion of the game, details within this include:
+- A winning overlay that is revealed upon successful completion of the game, details within this include:
 -- a congratulations message
 -- the total moves taken 
 -- total time taken
@@ -91,7 +91,7 @@ The game features:
 -- Back to Home Button
 
 ## UX
-The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 seperate layers that are revealed as the situation and flow occurs. Those sections / layers are:
+The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 separate layers that are revealed as the situation and flow occurs. Those sections / layers are:
 
 ### Game Structure / Features
 The entire game was developed as a single page, its structure follows this format:
@@ -102,7 +102,7 @@ The entire game was developed as a single page, its structure follows this forma
 - Game Over overlay - For situations where the player has not finished the game in time
 
 ### Landing Page
-The first section The player is brought to is the landing page. Here The player is introducted to the game. There is an animated flashing game name to highlight the game title. 
+The first section the player is brought to is the landing page. Here The player is introduced to the game. There is an animated flashing game name to highlight the game title. 
 
 Beneath this there is text explaining what the objective of the game is. That being to match pairs of cards within a time limit.
 
@@ -136,7 +136,7 @@ Keyframes - change from x color to y color
 }
 ````
 #### Player Name Input box Form
-Form element was used to GET the information and use it again in the below fuction
+Form element was used to GET the information and use it again in the below function
 ````
 <form action="name" method="get">
   <input type="text" name="playerName" id ="playerName" class="inputBox" required>            
@@ -162,9 +162,9 @@ getPlayerName = () => {
 }
 
 ````
-#### Click to start section
+#### Click to Start section
 
-Upon clicking on the submit button the landing page is hidden and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the palyer, so that the timer does not start counting down before the palyer is ready.
+Upon clicking on the submit button the landing page is hidden, and the game page is presented with an overlay that requires the user to click it before the game itself starts. This screen acts as a game ready space for the player, so that the timer does not start counting down before the player is ready.
 
 #### HTML Click To Start
 Click To Start Overlay - Controlled through the ready function as a method to start the game.
@@ -175,9 +175,9 @@ Click To Start Overlay - Controlled through the ready function as a method to st
 ````
 #### JavaScript Ready Function 
 
-This function creates arrays for overlays and cards, declares the game through calling a new instance of the Javascript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visiblity with this. It then runs the startGame Function.
+This function creates arrays for overlays and cards, declares the game through calling a new instance of the JavaScript class name SnapCardGame and assigns it two parameters, 60 seconds and the array cards. I then adds an event listener for each instance of click on the overlays and removes their visibility with this. It then runs the startGame Function.
 
-Second Part of the function adds event listeners for each card and runs the funciton flipCard at each click of a card
+Second Part of the function adds event listeners for each card and runs the function flipCard at each click of a card
 ````
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
@@ -191,7 +191,7 @@ function ready() {
 
     });
  
-    // adds event listeners for each card and runs the funciton flipCard at each click of a card
+    // adds event listeners for each card and runs the function flipCard at each click of a card
         cards.forEach(card => {
             card.addEventListener('click', () => {
             game.flipCard(card);
@@ -200,10 +200,10 @@ function ready() {
 }
 
 ````
-Statement that checks if the page DOM content has loaded before loading the javascript - this is used as within the javascript reference in the head section an 'async' method was declared
+Statement that checks if the page DOM content has loaded before loading the JavaScript - this is used as within the JavaScript reference in the head section an 'async' method was declared
 ````
 
-// statement that checks if the page DOM content has loaded before loading the javascript
+// statement that checks if the page DOM content has loaded before loading the JavaScript
 if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', ready());
 }else {
@@ -211,7 +211,7 @@ if(document.readyState === 'loading'){
 }
 
 ````
-Updated functio to arrow function and changed .forEach method to .map
+Updated function to arrow function and changed .forEach method to .map
 ````
 ready = () => {
     let overlays = Array.from(document.getElementsByClassName('overlays'));
@@ -224,7 +224,7 @@ ready = () => {
         });
 
     });
-    // adds event listeners for each card and runs the funciton flipCard at each click of a card
+    // adds event listeners for each card and runs the function flipCard at each click of a card
     cards.map(card => {
         card.addEventListener('click', () => {
             game.flipCard(card);
@@ -235,15 +235,15 @@ ready = () => {
 
 #### Game Area & Audio Controller
 
-Once the player clicks the start button, that overlay is hidden and the game begins. 
+Once the player clicks the start button, that overlay is hidden, and the game begins. 
 The timer starts counting down and the game background audio begins to play as well.
 As the player clicks each card the flips counter in the player information area updates. 
-The timer counts down from the 60 seconds start time and the cards animate through rotating 180 degrees on the front card and 180 degs on the back back, thus providing a 3d illusion. A audio file plays of a card flipping.
+The timer counts down from the 60 seconds start time and the cards animate through rotating 180 degrees on the front card and 180 degs on the back, thus providing a 3d illusion. An audio file plays of a card flipping.
 
-Once a match is found a audio file plays to indicate to the user that the cards have matched.
+Once a match is found an audio file plays to indicate to the user that the cards have matched.
 Should the player match all the cards then a victory audio file plays and the next section is revealed
 
-The audio files are declared below and arrow functions are used to call them
+The audio files are declared below, and arrow functions are used to call them
 ````
 // Audio Section
 // Declaring Audio files and setting Volume and Loop values
@@ -278,14 +278,14 @@ winning = () => {
     winningSound.play();
 }
 
-// Game Over track, runs stopmusic funciton and plays gameover track
+// Game Over track, runs stopmusic function and plays game over track
 gameOver = () => {
     stopMusic();
     gameOverSound.play();
 }
 
 ````
-The StartGame Function below Initialises the game and declares the variables to these values. THe comments below indicate each.
+The StartGame Function below Initialises the game and declares the variables to these values. The comments below indicate each.
 
 ````
 // StartGame Function -- On starting setup these variables to these values
@@ -308,7 +308,7 @@ The StartGame Function below Initialises the game and declares the variables to 
             this.counter.innerText = this.totalClicks;
             //star rating
             this.starRating = this.totalClicks;
-            // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
+            // setTimeout  function - function to set time to start and trigger shuffle, countdown and selected state
             setTimeout(() => {
                 startMusic();
                 this.shuffleCards();
@@ -321,7 +321,7 @@ The StartGame Function below Initialises the game and declares the variables to 
 #### Hide Cards Function
 This function removes the visible and matched values from the cards classlists through the use of .map method
 ````
-// set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when restting or         setting up for the first time
+// set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when resetting or setting up for the first time
     hideCards() {
         this.cardsArray.map(card => {
             card.classList.remove('visible');
@@ -333,9 +333,9 @@ This function removes the visible and matched values from the cards classlists t
 
 
 #### Winning Overlay
-Upon successfully finding all of the cards the game screen is paused and a game winning overlay is rpesented to the player. This contains a winning message, with details about the players performance. The player is presented with how many seconds it took them to complete the game and also how many attempts it took them to win, the javascript for this operation is detailed below.
+Upon successfully finding all of the cards the game screen is paused and a game winning overlay is presented to the player. This contains a winning message, with details about the players performance. The player is presented with how many seconds it took them to complete the game and also how many attempts it took them to win, the JavaScript for this operation is detailed below.
 
-There is a button to play the game again, whereby the startgame function is invoked. This funciton resets the timer, counter and reshuffles the cards, just the same as if the player arrived at the game for the first time.
+There is a button to play the game again, whereby the startgame function is invoked. This function resets the timer, counter and reshuffles the cards, just the same as if the player arrived at the game for the first time.
 
 ````
  // winning the game conditions
@@ -355,7 +355,7 @@ There is a button to play the game again, whereby the startgame function is invo
 ````
 
 #### Game Over Overlay
-If the player is unssuccessul in completing the game in time then they are presented with a game over screen. This pauses the game page and informs the user that they were unsuccessful in their attemp and prompts them to retry. This is again making use of the startgame function and resets the game, this function is run when clicking the go agin button in the html.
+If the player is unsuccessful in completing the game in time then they are presented with a game over screen. This pauses the game page and informs the user that they were unsuccessful in their attempt and prompts them to retry. This is again making use of the startgame function and resets the game, this function is run when clicking the go again button in the html.
 ````
 // gameover conditions
     gameOver(){
@@ -369,7 +369,7 @@ If the player is unssuccessul in completing the game in time then they are prese
     }
 ````
 
-#### Card Shuffle Function Fisher / Yeats Function
+#### Card Shuffle Function Fisher / Yates Function
 ````
   // Card Shuffle function --- fisher Yeates Function for shuffling
     shuffleCards(){
@@ -381,11 +381,11 @@ If the player is unssuccessul in completing the game in time then they are prese
     }
  ````
  
-#### Card Flip Javascript
+#### Card Flip JavaScript
 The card flip JavaScript, logic,  is broken up into a number of functions. 
- The function is called as eventlisteners where added to each card, on clicking a card the flipcard function is run. This       function is declared with the parameter of card to refence the cards and checked whether the card can be flipped first thorugh the function canCardFlip
+ The function is called as event listeners where added to each card, on clicking a card the flipcard function is run. This function is declared with the parameter of card to refence the cards and checked whether the card can be flipped first through the function canCardFlip
  ````
- //card flippping function
+ //card flipping function
     flipCard(card){
         // check first if the card can be flipped by calling the canCardFlip functon
         if(this.canCardFlip(card)){
@@ -441,7 +441,7 @@ This statement is true unless one of the three conditions is not not in their de
         card2.classList.add('matched');
         //play the audio of cards matched
         this.audioController.matched();
-        //if all matched cards equals the amount of cards, then the game is won and play the winning music
+        //if all matched cards equal the amount of cards, then the game is won and play the winning music
         if(this.matchedCards.length === this.cardsArray.length)
             this.winning();
     }
@@ -451,7 +451,7 @@ This statement is true unless one of the three conditions is not not in their de
 The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
 
 #### Home Page Game Completed Image
-The image in the center of the landing page is a screenshot from a play through of the game, this is used to illustrate to the players how a completed game would look like and the objective. The image is available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg
+The image in the centre of the landing page is a screenshot from a play through of the game, this is used to illustrate to the players how a completed game would look like and the objective. The image is available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg
 
 #### Background Image for Landing Page and Game Page
 The image used as the background for the landing and game page is taken from https://wallpapercave.com/w/2YPxgPL . It is hosted on Cloudinary available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/cards_el9qnq.jpg
@@ -477,9 +477,9 @@ The cards used in the game where taken from https://www.vecteezy.com/free-vector
 
 ### Features Left to Implement
 
-1 - Adding game levels - The addition of additonal amounts of cards would add to the game difficulty, espically combined with the timer feature which would require users to be quick and effective in recalling the position of each of the cards.
+1 - Adding game levels - The addition of additional amounts of cards would add to the game difficulty, especially combined with the timer feature which would require users to be quick and effective in recalling the position of each of the cards.
 
-2 - The addition of a rating system - The rating system would be based out of a star rating. The user would start with 5 stars and then when they complete the game a function would check against a number of arguments as to whether the user had x amount of attemtps and display stars based on this. Example if the user took 30 clicks then they would get 5 stars, if they took 40 clicks then they would get 4 stars and so on. 
+2 - The addition of a rating system - The rating system would be based out of a star rating. The user would start with 5 stars and then when they complete the game a function would check against a number of arguments as to whether the user had x amount of attempts and display stars based on this. Example if the user took 30 clicks then they would get 5 stars, if they took 40 clicks then they would get 4 stars and so on. 
 
 
 ## Testing
@@ -503,11 +503,11 @@ Testing was carried out by making use of the following devices/browsers:
 
 
 ### Functional Tests
-#### Test:Player Name Captured
+#### Test: Player Name Captured
 1. Input of Player Name
 2. Submit Player Name
 3. Required attribute works for no name entry
-4. Player Name displays within game page informatio section
+4. Player Name displays within game page information section
 5. Player Name displays in Winning overlay
 6. Player Name displays in Game Over Overlay
 
@@ -534,8 +534,8 @@ Testing was carried out by making use of the following devices/browsers:
 
 #### Test: Winning Overlay Works
 1. On successful matching of all cards the winning overlay displays
-2. The amount of time remain is subtracted from the total time and displayed as the amount of time taken for the palyer to complete the game
-3. The number of attempts is aquired and displayed within the winning overlay
+2. The amount of time remain is subtracted from the total time and displayed as the amount of time taken for the player to complete the game
+3. The number of attempts is acquired and displayed within the winning overlay
 4. The player name is pulled from the input and displayed in the winning overlay
 5. The retry button resets the game
 6. The back to home page button brings the user back to the landing/home page
@@ -558,7 +558,7 @@ This website is deployed on github pages. Deployment to my Github pages is done 
 
 ### Deployment Steps
 1. Using the terminal window in gitpod IDE, adding the files to the staging area using the 'git add' command.
-2. Comminting these files to the git repository system with comments using the 'git commit -m "insert commentary" ' syntax.
+2. Commenting these files to the git repository system with comments using the 'git commit -m "insert commentary" ' syntax.
 3. Deployment is made to the GitHub pages using the 'git push' command.
 
 All versions of the development process is held on the master branch.
@@ -568,7 +568,7 @@ This site can be accessed directly through the following link: https://pysched.g
 ## Credits
 
 ### Content
-- The content for the game was creaeted by myself.
+- The content for the game was created by myself.
 
 ### Media
 
@@ -585,29 +585,29 @@ All audio files for this project were sourced from:
 - http://soundbible.com/
 - https://www.bensound.com/
 
-Each of the sound files used has a free use assosicated with them and can be found in 'assets/audio' folder in the main repository
+Each of the sound files used has a free use associated with them and can be found in 'assets/audio' folder in the main repository
 
 ### Acknowledgements
-Acknowledgemets to the following in the construction, guidence and direction of this project
+Acknowledgements to the following in the construction, guidance and direction of this project
 
 - Rahul Patil for his mentoring advice
 
-- w3schools for html, css and javascript tutorials
+- w3schools for html, CSS and JavaScript tutorials
 
 ### Tutorials and Learnings
 
 How to Code a Card Matching Game - https://www.youtube.com/watch?v=28VfzEiJgy4
-This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later javascript interaction, it helped me to form my ideas and provide context and understanding of how to setup my html and css for later javascript.
+This tutorial is part 1 of explainer video, it aided me by showing a setup for a card game and some styling method for later JavaScript interaction, it helped me to form my ideas and provide context and understanding of how to setup my html and CSS for later JavaScript.
 
 How To Code A Card Game In Plain JavaScript - Spooky Halloween Edition - https://www.youtube.com/watch?v=3uuQ3g92oPQ 
-This tutorial is the second part of the explainer video, here the javascript method is explained, I used this resource to learn about how to implement the game logic in terms of setting up javascript classes, constructors, creation of audio classes/ constuctors and compliing these setups to run together. I completed this several times to further embed this learning and get a better understanding of how and why to setup my javascript in these ways.
+This tutorial is the second part of the explainer video, here the JavaScript method is explained, I used this resource to learn about how to implement the game logic in terms of setting up JavaScript classes, constructors, creation of audio classes/ constructors and compiling these setups to run together. I completed this several times to further embed this learning and get a better understanding of how and why to setup my JavaScript in these ways.
 
 Memory Card Game - JavaScript Tutorial - https://www.youtube.com/watch?v=ZniVgo8U7ek 
-This tutorial was another breakdown of creating a javascript memory game, it was approached differently that the previous videos and served to help learn about the different ways that javascript can be implemented to develop similar outcomes. This served to help me frame my game idea and aided in my development  and learning of javascript implementation.
+This tutorial was another breakdown of creating a JavaScript memory game, it was approached differently than the previous videos and served to help learn about the different ways that JavaScript can be implemented to develop similar outcomes. This served to help me frame my game idea and aided in my development and learning of JavaScript implementation.
 
 Memory Game in Vanilla JavaScript - Marina Ferreira - https://marina-ferreira.github.io/tutorials/js/memory-game/
-This tutorial took a different approach in its implement of javascript to create a memory game. I gained a large amount of insight with regards to how to setup and implement javascript for a memory game. Being able to follow the flow of creating a javascript system greatly aided my learning and understanding.
+This tutorial took a different approach in its implement of JavaScript to create a memory game. I gained a large amount of insight with regards to how to setup and implement JavaScript for a memory game. Being able to follow the flow of creating a JavaScript system greatly aided my learning and understanding.
 
-Codeacademy course on Javascript - https://www.codecademy.com/learn/introduction-to-javascript 
-I worked through a javascript course at codeacademy which aided in my understanding of constructor classes, their construction, use and implmentation.
+Codeacademy course on JavaScript - https://www.codecademy.com/learn/introduction-to-javascript 
+I worked through a JavaScript course at codeacademy which aided in my understanding of constructor classes, their construction, use and implementation.
 
