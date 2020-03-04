@@ -10,6 +10,41 @@ The timer is constantly displayed on screen as is the flip attempts counts.
 
 At the start of the game the player will be asked to enter their name, this can then be passed to the endgame overview where the players name and results are displayed. This is in the form of how many attempts it tool the user to find all the matches and how many seconds it took them.
 
+## Technologies Used
+### Bootstrap v4.4.1
+
+https://getbootstrap.com/docs/4.4/getting-started/introduction/
+
+Bootstrap is used in this project for the following areas:
+- Landing page
+- Sign in Button
+- General Buttons
+- Game Container
+- Card items
+
+
+### Cloudinary Image Manager
+All images used in the game and in this README.md file are stored and hosted on Cloudinary.
+https://cloudinary.com 
+
+### FontAwesome v4.7.0
+
+Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is refereneced as intented to be available should further developments to the game occur in the future.
+
+The Fontawesome link is from my own personal account with FontAwesome.
+
+https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+### GitHub repository
+
+This game is hosted on Github Project Name: Pysched/SnapCards
+GitHub Repository: https://github.com/Pysched/SnapCards
+Demo Link: https://pysched.github.io/SnapCards/
+
+### IDE
+
+This project was developed in part on the GitPod IDE, however for local testing and development and due to technical issues with gitpod, it was also developed with Visual Studio Code Editor.
+
 ## Project Objectives / User Stories
 The main objectives of the game are:
 - Build a Memory Game
@@ -17,6 +52,43 @@ The main objectives of the game are:
 - Build a simple single player pattern matching game
 - Create a game that includes, audio and visual patterns that compliment the game design
 - Provide users with an explanation of what they are to do
+
+## Wireframes
+The following wireframes are my initial design of the game, they served as a framework to work towards, the final product is very similar to this initial design.
+
+- ![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/start_page_uovwss.jpg)
+- ![Wireframes Images - Results Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/2nd_page_w9rulf.jpg)
+- ![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/game_page_lettwf.jpg)
+- ![Wireframes Images - Game Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/results_page_scnxnl.jpg)
+- ![Wireframes Images - Game OVer Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_300/v1583263837/images/error_page_dxizsm.jpg)
+
+## Features
+
+The game features:
+- Landing page with a player name entry feature, this will be a required field that the user must enter a player name for. This acts as a way of tying the player to the game, by having the player name be associated with them throughout the game and for the final scoring page.
+
+- Game instructions on the landing page in the form of text description of the game purpose and an image that shows the completed actions, that of amtching all the pairs
+
+- A Click to start modal overlay to allow the player to control when they start the game. Once clicked the background music starts playing, the timer starts counting down and the game is on.
+
+- A game page with: 
+-- Player name from the landing page displayed
+-- A count down timer indicating how much time remains
+-- A filps counter to indicate how many attempts it has taken
+-- Retry Button if the player choses to restart during the game
+-- A Back to landing page button if the player wants to quit
+-- The game area, where all the cards are presented and animate flipping over to reveal what cards they are.
+
+- A winning overlay that is reveiled upon successful completetion of the game, details within this include:
+-- a congratulations message
+-- the total moves taken 
+-- total time taken
+-- Retry button
+-- Return to home page button
+
+- A Game Over overlay that reveals if the time runs out
+-- Retry Button
+-- Back to Home Button
 
 ## UX
 The game is developed to be contained within a single interactive and responsive webpage. This is broken down into 5 seperate layers that are revealed as the situation and flow occurs. Those sections / layers are:
@@ -38,6 +110,7 @@ There is a supporting screenshot of a completed game of matched pairs of cards b
 
 Below this image is an instruction for the player/user to fill in their name beneath. This has the required attribute attached to it. 
 Through filling in the text input field and clicking submit the player is brought to the next section / layer.
+
 ##### Styles for Landing Page
 
 Initial H3 title styles
@@ -349,42 +422,11 @@ If the player is unssuccessul in completing the game in time then they are prese
  
 ````
 
-#### Card Mis Match
+
 
 #### Objectives
 The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
 
-#### Wireframes
-The following wireframes are my initial design of the game, they served as a framework to work towards, the final product is very similar to this initial design.
-
-![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_400/v1583263837/images/start_page_uovwss.jpg)
-![Wireframes Images - Results Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_400/v1583263837/images/2nd_page_w9rulf.jpg)
-![Wireframes Images - Start Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_345/v1583263837/images/game_page_lettwf.jpg)
-![Wireframes Images - Game Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_345/v1583263837/images/results_page_scnxnl.jpg)
-![Wireframes Images - Game OVer Page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_345/v1583263837/images/error_page_dxizsm.jpg)
-
-## Features
-
-The game features:
-A name entry feature, this will be a required field that the user must enter a player name for. This acts as a way of tying the player to the game, by having the player name be associated with them throughout the game and for the final scoring page.
-
-A menu screen that will consist of a difficulty selection menu system. Here the player will select the time limits, the number of cards the player will be challenged with and level of the game.
-
-Selection of these options will load in the scripts that contain the time limit, the number of cards the player starts with. The base level of the game is available from the start, however the 2nd and 3rd levels are not available until the player has progressed past the first level.
-
-After this point the player, assuming they replay from within the same session, can choose from the 2nd level, and again once the second level is completed they have the option to select any level of the game, to try and improve their score.
-
-Once options have been selected the player is brought to the game screen. Here there is a start button to start the game. This is here so that the player has time is see the modal tool tips that will be made to explain what the player is to do. Once they either close the tool tips of complete them they are free to press start and begin the game.
-
-The game starts with when the user clicks a modal that asks them to click to start when they are ready, this triggers the timer to start counting down. From here the user can select cards by clicking on them. Each click of a card animates the element to display what is behind it. This flip of the card only last for 500ms, or upon clicking of a second card, they both stay flipped for 1 second, unless they match they will both revert back to their default positions.
-Matched cards will stay revealed for the duration of the game.
-
-Each click of a card will be counted as an attempt. This will be updated in the attempts counter on screen for the user to see.
-Based on the number of attempts made the user will be able to see how effective they were at finding the pairs.
-
-If the timer elapses, and the player has not found all the matching pairs, then a modal overlay will inform the player that they were unsuccessful in their attempt and prompt them to either restart.
-
-If the player successfully matches all pairs within the time limit and will a predefined amount of attempted, then they will be displayed a winning modal overlay that will show them the details of their game session.
 
 #### Home Page Game Completed Image
 The image in the center of the landing page is a screenshot from a play through of the game, this is used to illustrate to the players how a completed game would look like and the objective. The image is available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg
@@ -426,41 +468,6 @@ In addition, you may also use this section to discuss plans for additional featu
 
 2 - The addition of a rating system - The rating system would be based out of a star rating. The user would start with 5 stars and then when they complete the game a function would check against a number of arguments as to whether the user had x amount of attemtps and display stars based on this. Example if the user took 30 clicks then they would get 5 stars, if they took 40 clicks then they would get 4 stars and so on. 
 
-
-## Technologies Used
-### Bootstrap v4.4.1
-
-https://getbootstrap.com/docs/4.4/getting-started/introduction/
-
-Bootstrap is used in this project for the following areas:
-- Landing page
-- Sign in Button
-- General Buttons
-- Game Container
-- Card items
-
-
-### Cloudinary Image Manager
-All images used in the game and in this README.md file are stored and hosted on Cloudinary.
-https://cloudinary.com 
-
-### FontAwesome v4.7.0
-
-Font Awesome was referenced in this project as part of my own customised boiler plate bootstrap setup, this is refereneced as intented to be available should further developments to the game occur in the future.
-
-The Fontawesome link is from my own personal account with FontAwesome.
-
-https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-### GitHub repository
-
-This game is hosted on Github Project Name: Pysched/SnapCards
-GitHub Repository: https://github.com/Pysched/SnapCards
-Demo Link: https://pysched.github.io/SnapCards/
-
-### IDE
-
-This project was developed in part on the GitPod IDE, however for local testing and development and due to technical issues with gitpod, it was also developed with Visual Studio Code Editor.
 
 ## Testing
 
