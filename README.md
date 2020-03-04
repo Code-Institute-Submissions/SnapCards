@@ -101,7 +101,7 @@ The entire game was developed as a single page, its structure follows this forma
 - Winning overlay - For situations where the player has completing the game in time
 - Game Over overlay - For situations where the player has not finished the game in time
 
-#### Landing Page
+### Landing Page
 The first section The player is brought to is the landing page. Here The player is introducted to the game. There is an animated flashing game name to highlight the game title. 
 
 Beneath this there is text explaining what the objective of the game is. That being to match pairs of cards within a time limit.
@@ -111,7 +111,7 @@ There is a supporting screenshot of a completed game of matched pairs of cards b
 Below this image is an instruction for the player/user to fill in their name beneath. This has the required attribute attached to it. 
 Through filling in the text input field and clicking submit the player is brought to the next section / layer.
 
-##### Styles for Landing Page
+#### Styles for Landing Page
 
 Initial H3 title styles
 ````
@@ -135,7 +135,7 @@ Keyframes - change from x color to y color
     to {color:rgb(222, 211, 7)}
 }
 ````
-##### Player Name Input box Form
+#### Player Name Input box Form
 Form element was used to GET the information and use it again in the below fuction
 ````
 <form action="name" method="get">
@@ -213,47 +213,45 @@ The timer counts down from the 60 seconds start time and the cards animate throu
 Once a match is found a audio file plays to indicate to the user that the cards have matched.
 Should the player match all the cards then a victory audio file plays and the next section is revealed
 
-An audioController class was created with a constuctor in it, this declares new audio instances of each audio track. The functions to call each of these instances are declared below the constructor to be called when required within the game.
+The audio files are declared below and arrow functions are used to call them
 ````
-// Create a class to manage the instances of audio tracks. 
-class AudioController {
-    constructor() {
-        this.bgMusic = new Audio('assets/audio/bgMusic.mp3');
-        this.flipSound = new Audio('assets/audio/cardFlip.wav');
-        this.matchSound = new Audio('assets/audio/success.wav');
-        this.winningSound = new Audio('assets/audio/winning.mp3');
-        this.gameOverSound = new Audio('assets/audio/gameover.mp3');
-        this.bgMusic.volume = 0.3; // audio volume decrease as it is quite loud from source
-        this.winningSound.volume = 0.8; // audio volume decrease so as not to startle people
-        this.bgMusic.loop = true;// loop the background game music to play over continously
-    }
-    // Start music function
-    startMusic() {
-        this.bgMusic.play();
-    }
-    //stop function for music, pause the current track and reset its time to 0
-    stopMusic(){
-        this.bgMusic.pause();
-        this.bgMusic.currentTime = 0;
-    }
-    // card flip sound
-    flip(){
-        this.flipSound.play();
-    }
-    // Card Match Sound
-    matched() {
-        this.matchSound.play();
-    }
-    // Winning Sound upon completion of game, by playing stop music function and playing winning sound function
-    winning() {
-        this.stopMusic();
-        this.winningSound.play();
-    }
-    // Game Over track, runs stopmusic function and plays gameover track
-    gameOver(){
-        this.stopMusic();
-        this.gameOverSound.play();
-    }
+// Audio Section
+// Declaring Audio files and setting Volume and Loop values
+const bgMusic = new Audio('assets/audio/bgMusic.mp3');
+bgMusic.volume = 0.3;
+bgMusic.loop = true;
+const flipSound = new Audio('assets/audio/cardFlip.wav');
+const matchSound = new Audio('assets/audio/success.wav');
+const winningSound = new Audio('assets/audio/winning.mp3');
+winningSound.volume = 0.6;
+const gameOverSound = new Audio('assets/audio/gameover.mp3');
+gameOverSound.volume = 0.6;
+
+// startMusic function
+startMusic = () => bgMusic.play();
+
+//stopMusic function - pause the current track - set bgMusic audio track time to zero
+stopMusic = () => {
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+}
+
+// card flip sound
+flip = () => flipSound.play();
+
+// Card Match Sound
+matched = () => matchSound.play();
+
+// Winning Sound upon completion of game, by playing stop music function and playing winning sound function
+winning = () => {
+    stopMusic();
+    winningSound.play();
+}
+
+// Game Over track, runs stopmusic funciton and plays gameover track
+gameOver = () => {
+    stopMusic();
+    gameOverSound.play();
 }
 
 ````
@@ -261,50 +259,47 @@ The StartGame Function below Initialises the game and declares the variables to 
 
 ````
 // StartGame Function -- On starting setup these variables to these values
-    startGame(){
-        // card selector
-        this.cardCheck = null;
-        // setting the clicks value as 0
-        this.totalClicks = 0; 
-        // pointing the timeremaining value at the totaltime varable
-        this.timeRemaining = this.totalTime;
-        // setting an empty array for matched cards to go into
-        this.matchedCards = [];
-        // setting the state of the actions, card is selected to true
-        this.selected = true;
-        // run card hide function
-        this.hideCards();
-        // pointing time at timeremaining varable
-        this.time.innerText = this.timeRemaining;
-        // pointing counter at totalclicks varable
-        this.counter.innerText = this.totalClicks;
-        //star rating
-        this.starRating = this.counter.innerText;
-        // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
-        setTimeout(() => {
-            this.audioController.startMusic();
-            this.shuffleCards();
-            this.selected = false;
-            this.countDown = this.startCountDown();
-        },500);
-    }
+    startGame = () => {
+            // card selector
+            this.cardCheck = null;
+            // setting the clicks value as 0
+            this.totalClicks = 0;
+            // pointing the timeremaining value at the totaltime varable
+            this.timeRemaining = this.totalTime;
+            // setting an empty array for matched cards to go into
+            this.matchedCards = [];
+            // setting the state of the actions, card is selected to true
+            this.selected = true;
+            // run card hide function
+            this.hideCards();
+            // pointing time at timeremaining varable
+            this.time.innerText = this.timeRemaining;
+            // pointing counter at totalclicks varable
+            this.counter.innerText = this.totalClicks;
+            //star rating
+            this.starRating = this.totalClicks;
+            // setTimeout  function - function to set time to start and triggger shuffle, countdown and selected state
+            setTimeout(() => {
+                startMusic();
+                this.shuffleCards();
+                this.selected = false;
+                this.countDown = this.startCountDown();
+            }, 500);
+        }
 ````
 
 #### Hide Cards Function
-This function removes the visible and matched values from the cards classlists
+This function removes the visible and matched values from the cards classlists through the use of .map method
 ````
-  // set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when resetting or setting up for the first time
-    hideCards(){
-        this.cardsArray.forEach(card => {
+// set cards to be hidden by removing the visible class from the HTML and the matched class - this will run when restting or         setting up for the first time
+    hideCards() {
+        this.cardsArray.map(card => {
             card.classList.remove('visible');
             card.classList.remove('matched');
         });
 
     }
 ````
-
-
-
 
 
 #### Winning Overlay
@@ -356,8 +351,8 @@ If the player is unssuccessul in completing the game in time then they are prese
     }
  ````
  
- #### Card Flip Javascript
- The card flip JavaScript, logic,  is broken up into a number of functions. 
+#### Card Flip Javascript
+The card flip JavaScript, logic,  is broken up into a number of functions. 
  The function is called as eventlisteners where added to each card, on clicking a card the flipcard function is run. This       function is declared with the parameter of card to refence the cards and checked whether the card can be flipped first thorugh the function canCardFlip
  ````
  //card flippping function
@@ -384,10 +379,11 @@ If the player is unssuccessul in completing the game in time then they are prese
     }
  
  ````
- #### Can Card Flip
- The below logic stipulates 3 not conditions that need to be in that state before a card can be flipped.
+#### Can Card Flip
+The below logic stipulates 3 not conditions that need to be in that state before a card can be flipped.
+This statement is true unless one of the three conditions is not not in their default state/value, So if not this.selected(default is true) so if this .selected is false and the card is not previously matched including it is not already selected the current card of being checked then return true and the card can flip
  ````
- // can the card flip conditions
+// This statement is true unless one of the three conditions is not not in their default state/value, So if not this.selected(default is true) so if this .selected is false and the card is not previously matched including it is not already selected the current card of being checked then return true and the card can flip
     canCardFlip(card){
         return !this.selected && !this.matchedCards.includes(card) && card !== this.cardCheck;
     }
@@ -421,12 +417,8 @@ If the player is unssuccessul in completing the game in time then they are prese
     }
  
 ````
-
-
-
 #### Objectives
 The objective of the game is to challenge the player to find, remember and match pairs of numbersand do it in a timely manner and in the least amount of moves.
-
 
 #### Home Page Game Completed Image
 The image in the center of the landing page is a screenshot from a play through of the game, this is used to illustrate to the players how a completed game would look like and the objective. The image is available at: https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg
@@ -453,15 +445,6 @@ The cards used in the game where taken from https://www.vecteezy.com/free-vector
 - https://res.cloudinary.com/pysched/image/upload/v1583235668/images/2_vq72ey.png
 - https://res.cloudinary.com/pysched/image/upload/v1583235668/images/4_rjq7rh.png
 
-### Existing Features
-
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
 ### Features Left to Implement
 
 1 - Adding game levels - The addition of additonal amounts of cards would add to the game difficulty, espically combined with the timer feature which would require users to be quick and effective in recalling the position of each of the cards.
@@ -470,6 +453,21 @@ In addition, you may also use this section to discuss plans for additional featu
 
 
 ## Testing
+
+### Tools
+Testing was carried out by making use of the following devices/browsers:
+
+- Desktop
+-- Chrome
+-- Firefox
+
+- Samsung S10
+-- Chrome
+
+### Testing Screenshots
+#### Desktop
+
+
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
@@ -505,7 +503,7 @@ This site can be accessed directly through the following link: https://pysched.g
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The content for the game was creaeted by myself.
 
 ### Media
 
