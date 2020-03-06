@@ -488,19 +488,40 @@ The cards used in the game where taken from https://www.vecteezy.com/free-vector
 Testing was carried out by making use of the following devices/browsers:
 
 - Desktop
+-- Windows Pc
 -- Chrome
 -- Firefox
 
-- Samsung S10
+- Mobile
+-- Samsung S10
 -- Chrome
 
 ### Testing Screenshots
-#### Desktop
+#### Desktop 
+To test that the game runs as designed and expected I tested the game extensively as I iterated through the process. The screenshots below idicate the final working flow of the game as detailed above in various sections. 
+![Desktop Testing Landing Page Layout and name entry](https://res.cloudinary.com/pysched/image/upload/c_scale,h_500/v1583510262/firefoxdesktoplanding_m6q6a3.jpg)
 
+- The home/landing screen is displayed correctly, the game area is currently hidden and as are the 3 other game overlays, none of which extrude over the landing area. The player has an area to input there name and the game instructions are presented with the game. Once the player clicks submit they are taken to the pre game overlay below
 
-#### Mobile
+![Desktop Testing Click to Start overlay](https://res.cloudinary.com/pysched/image/upload/c_scale,h_500/v1583510262/firefoxdesktopClickto_start_ljmvql.jpg)
 
+- The click to start overlay displays as the submit button on the home page is clicked. This function submits the plyer name to be displayed wthin a span of a tag and also disables the landing area and displays the game page. In the back ground you can see that the players name has been pulled thoruhg. On click of the start screen the game will commence. This piece of javasscript functionailty works and was tested extensively.
 
+![Desktop Testing Game in motion](https://res.cloudinary.com/pysched/image/upload/c_scale,h_500/v1583510262/Firefoxdesktopgamepage_aaqefr.jpg)
+
+-The click to play over has been clicked and triggered the startgame function,this starts the countdown timer and begins to play the game music. The other funcitons for game logic, such as card flip and card count and card matched array are in place waiting to be called upon.
+
+![Desktop Testing Cards Matched](https://res.cloudinary.com/pysched/image/upload/c_scale,h_500/v1583510262/firefoxdesktopmatching_cards_axnw9y.jpg)
+
+- The game in this screenshot has cards matched and these are in turn stored in an array which checks against the total cards to see if it is equal to the amount stored. The cards here have been tested to ensure that once a card is clicked, during the time before a second card is clicked to be check, that the first card cannot be clicked again. Foloowing this if a card matches that they are stored in an array and removed from the cards that can be clicked. The total amount of clicks is displayed on top and increments each time a card is clicked
+
+![Desktop Testing ran out of time](https://res.cloudinary.com/pysched/image/upload/c_scale,h_500/v1583510262/FirefoxDesktopLosing_cr3q5j.jpg)
+
+- The game over overlay displys when the timer runs down to 0 without all the cards being matched, This pauses the game music and plays the gameover music. The overlay triggered by this event presents the player with the option to either reset the game or to return to the home page. 
+
+![Desktop Testing ](https://res.cloudinary.com/pysched/image/upload/c_scale,h_500/v1583510263/firefoxdesktopwinning_yaozh0.jpg)
+
+- The winning overlay is presented when the player has matched all the cards within the given time. The overlay displays and prsents the player with the results of the game. These results are based on the time remaing minus the tol time of the game to give the player the time taken result in seconds. The total attempts figure is pulled from the counter and presented to the player aswell. This has been tested and works.
 
 ### Functional Tests
 #### Test: Player Name Captured
@@ -540,17 +561,8 @@ Testing was carried out by making use of the following devices/browsers:
 5. The retry button resets the game
 6. The back to home page button brings the user back to the landing/home page
 
-
-
-
-
-
 #### Bugs Found
 1. Despite the use of a form and the get method the required tag is not functioning, hence a player can enter no name, while not game breaking, the implementation of the required tag is not working.
-
-
-
-
 
 ## Deployment
 
