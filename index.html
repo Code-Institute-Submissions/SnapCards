@@ -17,6 +17,7 @@
 <body>
 	<!-- Start of Landing Page -->
 	<div class="container landing-page" id="landing-page">
+		
 		<div class="container menu">
 			<div class="game-title">
 				<h3 class="h3-title" id="h3-title">Snap Cards</h3>
@@ -35,13 +36,15 @@
 				<input class="btn btn-danger btn-round-lg" onclick="getPlayerName()" required="" type="button" value="Submit">
 			</form>
 		</div>
+
 	</div><!-- End of Landing Page -->
 	<!-- Start Of Game Page -->
-	<div class="game-page" id="game-page">
+	<div class="container game-page" id="game-page">
 		<div class="game-page-content">
 			<!-- Start Game Overlay -->
 			<div class="overlays visible" id="intro">
 				<div class="intro-text">
+					When you are ready,<br>
 					Click to Begin!
 				</div>
 			</div><!-- Winning Overlay -->
@@ -52,13 +55,13 @@
 						<p>You found all the pairs</p>
 						<p>It only took you <span id="totalMoves"></span> clicks</p>
 						<p>And you did it in only <span id="timeTaken"></span> seconds</p>
-						<p>You found all the pairs</p>
+						
 					</div><button class="btn btn-danger btn-round-lg" id="retry" onclick="startGame()" type="button">Go Again</button> <button class="btn btn-danger btn-round-lg" id="retry" onclick="window.location.href='index.html'" type="button">I've had Enough</button>
 				</div>
 			</div><!-- Out of Time Overlay  -->
 			<div class="overlays" id="out-of-time">
 				<div class="gameOver">
-					<p class="gameover-text">What Happened??</p>
+					<p class="gameover-text">Oh No...</p>
 					<p class="gameover-text">You Ran Out of Time!!</p>
 					<p class="gameover-text">Game over!!</p><button class="btn btn-danger btn-round-lg" id="retry" onclick="startGame()" type="button">Let's Go Again</button> <button class="btn btn-danger btn-round-lg" id="retry" onclick="window.location.href='index.html'" type="button">I've had Enough</button>
 				</div>
