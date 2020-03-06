@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,251 +17,248 @@
 
     <!-- JS -->
     <script src="assets/js/main.js" async></script>
-
+    
     <title>Snap Cards</title>
-</head>
+  </head>
+  <body>
 
-<body>
-
-    <!-- Start of Landing Page -->
-    <div class="container landing-page" id="landing-page">
-        <div class="container menu">
-            <div class="game-title">
-                <h3 class="h3-title" id="h3-title">Snap Cards</h3>
-            </div>
-            <div class="player-info">
-                <h5 class="question">Match all the pairs within the time limit to win the game!!</h5>
-            </div>
-            <div class="game-snapshot">
-                <img class="preview" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg">
-            </div>
-            <div class="player-info">
-                <h5 class="question">Ready to Play?</h5>
-            </div>
-
+ <!-- Start of Landing Page -->
+   <div class="container landing-page" id="landing-page">
+    <div class="container menu">
+        <div class="game-title">
+            <h3 class="h3-title" id="h3-title">Snap Cards</h3>
+        </div>
+        <div class="player-info">
+            <h5 class="question">Match all the pairs within the time limit to win the game!!</h5>
+        </div>
+        <div class="game-snapshot">
+            <img class="preview" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/gamepreview_xhuj7r.jpg">
+        </div>
+        <div class="player-info">
+            <h5 class="question">Ready to Play?</h5>
+        </div>
+            
             <h5 class="question">Type your name below and press Submit</h5>
             <br>
             <form action="name" method="get">
-                <input type="text" name="playerName" id="playerName" class="inputBox" required>
-                <br>
-                <br>
-                <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit" required />
-            </form>
+                <input type="text" name="playerName" id ="playerName" class="inputBox" required>            
+            <br><br>
+            <input type="button" class="btn btn-danger btn-round-lg" onClick="getPlayerName()" value="Submit" required />
+        </form>
         </div>
     </div>
+  </div>
+   <!-- End of Landing Page -->
+<!-- Start Of Game Page -->
+<div class="game-page" id="game-page">
+    <div class="game-page-content">
     
-    <!-- End of Landing Page -->
-    <!-- Start Of Game Page -->
-    <div class="game-page" id="game-page">
-        <div class="game-page-content">
-
-            <!-- Start Game Overlay -->
-            <div class="overlays visible" id="intro">
-                <div class="intro-text">Click to Begin!</div>
+    <!-- Start Game Overlay -->
+        <div class="overlays visible" id="intro">
+            <div class="intro-text">Click to Begin!</div>
+        </div>
+        
+      <!-- Winning Overlay --> 
+        <div class="overlays" id="winner">
+            <div class="winningOver">
+           <h2 id ="youWon">Congrats!! You have Won!!</h2> 
+            <div class="overlays-small"><p>You found all the pairs</p>
+                <p>It only took you <span id="totalMoves"> </span> clicks</p>
+                <p>And you did it in only <span id="timeTaken"> </span> seconds</p>   
+                <p>You found all the pairs</p>          
             </div>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onclick="startGame()"> Go Again </button>
+              <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="window.location.href='index.html'">I've had Enough</button>
+        </div>
+        </div>
 
-            <!-- Winning Overlay -->
-            <div class="overlays" id="winner">
-                <div class="winningOver">
-                    <h2 id="youWon"><span id="gamerId"> </span> Congrats!! You Won!!</h2>
-                    <div class="overlays-small">
-                        <p>You found all the pairs</p>
-                        <p>It only took you <span id="totalMoves"> </span> clicks</p>
-                        <p>And you did it in only <span id="timeTaken"> </span> seconds</p>
+        <!-- Out of Time Overlay  -->
+        <div class="overlays" id="out-of-time">
+            <div class="gameOver">
+                <p class="gameover-text">What Happened?? </p>
+           <p class="gameover-text"> You Ran Out of Time!!</p>
+           <p class="gameover-text"> Game over!!</p>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="startGame()">Let's Go Again</button>
+            <button id="retry" type="button" class ="btn btn-danger btn-round-lg" onClick="window.location.href='index.html'">I've had Enough</button>
+        </div>
+        </div>
 
-                    </div>
-                    <button id="retry" type="button" class="btn btn-danger btn-round-lg" onClick="startGame()">I want to try again</button>
-                    <button id="retry" type="button" class="btn btn-danger btn-round-lg" onClick="window.location.href='index.html'">I've had Enough</button>
-                </div>
-            </div>
-
-            <!-- Out of Time Overlay  -->
-            <div class="overlays" id="out-of-time">
-                <div class="gameOver">
-                    <p class="gameover-text"><span id="gamerId"> </span>What Happened?? </p>
-                    <p class="gameover-text"> You Ran Out of Time!!</p>
-                    <p class="gameover-text"> Game over!!</p>
-                    <button id="retry" type="button" class="btn btn-danger btn-round-lg" onClick="startGame()">Let's Go Again</button>
-                    <button id="retry" type="button" class="btn btn-danger btn-round-lg" onClick="window.location.href='index.html'">I've had Enough</button>
-                </div>
-            </div>
-
-            <div class="container game-details">
-
-                <h3 class="player-title">Player : <span id="gamerId"> </span></h3>
+        <div class="container game-details">
+           
+            <h3 class="player-title">Player : <span id="gamerId"> </span></h3>
                 <div class="game-container">
-                    <div class="game-info-container">
+                    <div class="game-info-container">            
                         <div class="game-info">
-                            Time: <span id="time-remaining">60</span>
-                        </div>
+                            Time: <span id ="time-remaining">60</span>
+                         </div>
                         <div class="game-info">
-                            Flips: <span id="flips">0</span>
+                            Flips: <span id ="flips">0</span>
                         </div>
                         <div class="game-info">
                             <button id="retry" type="button" class="btn btn-danger btn-round-lg" onClick="window.location.href='index.html'">I've had Enough</button>
                         </div>
                     </div>
                 </div>
+        </div>
+
+
+ <div class="card-game">
+    <div class="game-container">
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
             </div>
-
-            <div class="card-game">
-                <div class="game-container">
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-back card-face">
-                            <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png">
-                        </div>
-                    </div>
-                </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png">
             </div>
-            <!-- End of Game Page -->
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235670/images/king_wrbzaw.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/queen_kgzwsi.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/ace_gamw6c.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/joker_rehvwl.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/jack_tmgcn8.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235668/images/8_mhmafq.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/9_di1nwv.png">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="card-img" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/card-back_jffvaq.png">
+            </div>
+            <div class="card-front card-face">
+                <img class="card-actual" src="https://res.cloudinary.com/pysched/image/upload/v1583235669/images/10_dwaa52.png">
+            </div>
+        </div>
         </div>
     </div>
-    
+<!-- End of Game Page -->      
+        </div>
+    </div>
+</div>
 
-    <!-- Optional JavaScript -->
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-</body>
-
-</html>
+  </body>
+  </html>
